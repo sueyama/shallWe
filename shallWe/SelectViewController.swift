@@ -141,13 +141,13 @@ class SelectViewController: UIViewController, CLLocationManagerDelegate, UIImage
         if segue.identifier == "createroom"{
             //パラメータを渡す(Roomを作る)
             let createRoomVC = segue.destination as! CreateRoomViewController
-            createRoomVC.uid = uid
-            createRoomVC.profileImage = profileImage
+//            createRoomVC.uid = uid
+//           createRoomVC.profileImage = profileImage
         }else if segue.identifier == "roomslist"{
             //パラメータを渡す(近くのRoomを探す)
             let roomsVC = segue.destination as! RoomsViewController
             roomsVC.uid = uid
-            roomsVC.profileImage = profileImage
+//            roomsVC.profileImage = profileImage
             address = self.country + self.administrativeArea + self.subAdministrativeArea
             + self.locality + self.subLocality
             roomsVC.address = address
