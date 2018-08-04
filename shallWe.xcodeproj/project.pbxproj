@@ -23,6 +23,7 @@
 		21F3274A20E6DEDB00F80B79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */; };
 		21F3274E210199B900F80B79 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274D210199B900F80B79 /* RoomsViewController.swift */; };
 		21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */; };
+		A295067F21152CFB00B6DD8F /* test_kitagawa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295067E21152CFB00B6DD8F /* test_kitagawa.swift */; };
 		D2C3DDC85022E43623E3DE05 /* Pods_shallWe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920179996B8E2F21880714E7 /* Pods_shallWe.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoViewController.swift; sourceTree = "<group>"; };
 		7D04931EB22A278F89F002C8 /* Pods-shallWe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shallWe.release.xcconfig"; path = "Pods/Target Support Files/Pods-shallWe/Pods-shallWe.release.xcconfig"; sourceTree = "<group>"; };
 		920179996B8E2F21880714E7 /* Pods_shallWe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shallWe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A295067E21152CFB00B6DD8F /* test_kitagawa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_kitagawa.swift; sourceTree = "<group>"; };
 		D93F84454E1D114F49ADA721 /* Pods-shallWe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shallWe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shallWe/Pods-shallWe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				2100891220CDD1370016A49C /* PrivateChatViewController.swift */,
 				2100890C20CB8B100016A49C /* Post.swift */,
 				2151D50A21073BED00DC1141 /* LoginUserPost.swift */,
+				A295067E21152CFB00B6DD8F /* test_kitagawa.swift */,
 				2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */,
 				21411F8720BDFFF800D9A780 /* Main.storyboard */,
 				21411F8A20BE000B00D9A780 /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 				21411F9A20BF5D3900D9A780 /* LoginViewController.swift in Sources */,
 				2100890920C9E93C0016A49C /* CreateRoomViewController.swift in Sources */,
 				2151D50B21073BED00DC1141 /* LoginUserPost.swift in Sources */,
+				A295067F21152CFB00B6DD8F /* test_kitagawa.swift in Sources */,
 				2100890B20CA99650016A49C /* TopViewController.swift in Sources */,
 				2151D50D210A7CD900DC1141 /* ProfileEditViewController.swift in Sources */,
 				2100890F20CB9DE40016A49C /* ChatViewController.swift in Sources */,
