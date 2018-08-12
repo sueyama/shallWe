@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import GoogleSignIn
 import CoreLocation
 
@@ -23,6 +24,7 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //CLLocation初期化、delegate作成、位置情報取得開始
         catchLocationData()
 
@@ -40,7 +42,7 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //遷移の際にUIDとprofileImageをselectViewControllerに渡す
-        let selectVC = segue.destination as! TopViewController
+        let selectVC = segue.destination as! TabBarController
         selectVC.uid = uid
         selectVC.profileImage = self.profileImage! as NSURL
         
@@ -73,6 +75,8 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
                 return
             }
             //auth認証したgoogleアカウントに設定してある画像取得
+            let imageUrl = signIn.currentUser.profile.imageURL(withDimension: 100)
+            self.profileImage = imageUrl
 
             //firebaseに飛ばす
             self.postMyProfile()
@@ -89,36 +93,50 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
         //uid取得
         uid = Auth.auth().currentUser?.uid
         //firebaseのdatabaseの定義
-        let ref = Database.database().reference()
+        let ref = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/")
         //stragefileのURLを取得
         let storage = Storage.storage().reference(forURL: "gs://shallwe-28db7.appspot.com/")
         //usersという階層を作成
         let key = ref.child("Users").childByAutoId().key
         //stragefileに入ってくる画像のURLの在り処
         let imageRef = storage.child("Users").child(uid!).child("\(key).jpg")
-        
-        let imageData:NSData = try! NSData(contentsOf: self.profileImage)
-        //アップロードしたimagefileを置く
-        let uploadTask = imageRef.putData(imageData as Data, metadata: nil,completion:{ (metaData, error) in
-            if error != nil {
-                //エラーが出たらindevatorをストップさせる
-                AppDelegate.instance().dismissActivityIndicator()
-                return
-            }
-            
-            imageRef.downloadURL(completion: { (url, error) in
-                if url != nil {
-                    //userId,postIdをkeyとしてpostimageをfeedという変数に設定
-                    let feed = ["userID":self.uid!,"pathToImage":self.profileImage.absoluteString,"postID":key,"userName":"未設定","profileDetail":"未設定"] as [String:Any]
-                    let postFeed = ["\(key)":feed]
-                    //Users以下のdatabaseのアップデートをする
-                    ref.child("Users").updateChildValues(postFeed)
-                    //Indicatorをストップする
-                    AppDelegate.instance().dismissActivityIndicator()
-                }
-            })
-        })
+
+        var imageData:NSData = NSData()
+
+        if let image = self.profileImage{
+            imageData = try! NSData(contentsOf: image)
+        }
+
+        let uploadTask = imageRef.putData(imageData as Data)
         uploadTask.resume()
+        //userId,postIdをkeyとしてpostimageをfeedという変数に設定
+        let feed = ["userID":self.uid!,"pathToImage":self.profileImage.absoluteString,"postID":key,"userName":"未設定","profileDetail":"未設定"] as [String:Any]
+        let postFeed = ["\(key)":feed]
+        //Users以下のdatabaseのアップデートをする
+        ref.child("Users").updateChildValues(postFeed)
+        AppDelegate.instance().dismissActivityIndicator()
+
+        //アップロードしたimagefileを置く
+//        let uploadTask = imageRef.putData(imageData as Data, metadata: nil,completion:{ (metaData, error) in
+//            if error != nil {
+//                //エラーが出たらindevatorをストップさせる
+//                AppDelegate.instance().dismissActivityIndicator()
+//                return
+//            }
+//
+//            imageRef.downloadURL(completion: { (url, error) in
+//                if url != nil {
+//                    //userId,postIdをkeyとしてpostimageをfeedという変数に設定
+//                    let feed = ["userID":self.uid!,"pathToImage":self.profileImage.absoluteString,"postID":key,"userName":"未設定","profileDetail":"未設定"] as [String:Any]
+//                    let postFeed = ["\(key)":feed]
+//                    //Users以下のdatabaseのアップデートをする
+//                    ref.child("Users").updateChildValues(postFeed)
+//                    //Indicatorをストップする
+//                    AppDelegate.instance().dismissActivityIndicator()
+//                }
+//            })
+//        })
+//        uploadTask.resume()
     }
     
     func catchLocationData(){

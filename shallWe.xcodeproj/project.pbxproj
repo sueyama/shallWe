@@ -17,12 +17,12 @@
 		21411F8920BDFFF800D9A780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21411F8720BDFFF800D9A780 /* Main.storyboard */; };
 		21411F8B20BE000B00D9A780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21411F8A20BE000B00D9A780 /* Assets.xcassets */; };
 		21411F8E20BE000B00D9A780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21411F8C20BE000B00D9A780 /* LaunchScreen.storyboard */; };
-		21411F9A20BF5D3900D9A780 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21411F9920BF5D3900D9A780 /* LoginViewController.swift */; };
 		21411F9C20C2AACA00D9A780 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21411F9B20C2AACA00D9A780 /* SelectViewController.swift */; };
 		2151D50B21073BED00DC1141 /* LoginUserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2151D50A21073BED00DC1141 /* LoginUserPost.swift */; };
 		2151D50D210A7CD900DC1141 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */; };
 		218A252121126D6A00EEA502 /* JoinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A252021126D6A00EEA502 /* JoinChatViewController.swift */; };
 		21C0C7E2211EAFB000CA6ADD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C0C7E1211EAFB000CA6ADD /* TabBarController.swift */; };
+		21C0C7E42120055300CA6ADD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C0C7E32120055300CA6ADD /* LoginViewController.swift */; };
 		21F3274E210199B900F80B79 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274D210199B900F80B79 /* RoomsViewController.swift */; };
 		21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */; };
 		D2C3DDC85022E43623E3DE05 /* Pods_shallWe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920179996B8E2F21880714E7 /* Pods_shallWe.framework */; };
@@ -41,12 +41,12 @@
 		21411F8A20BE000B00D9A780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21411F8D20BE000B00D9A780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21411F8F20BE000B00D9A780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21411F9920BF5D3900D9A780 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "/Users/yaroten/Library/Mobile Documents/com~apple~CloudDocs/shallWe/shallWe/LoginViewController.swift"; sourceTree = "<absolute>"; };
 		21411F9B20C2AACA00D9A780 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		2151D50A21073BED00DC1141 /* LoginUserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserPost.swift; sourceTree = "<group>"; };
 		2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		218A252021126D6A00EEA502 /* JoinChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatViewController.swift; sourceTree = "<group>"; };
 		21C0C7E1211EAFB000CA6ADD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		21C0C7E32120055300CA6ADD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		21F3274D210199B900F80B79 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoViewController.swift; sourceTree = "<group>"; };
 		7D04931EB22A278F89F002C8 /* Pods-shallWe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shallWe.release.xcconfig"; path = "Pods/Target Support Files/Pods-shallWe/Pods-shallWe.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,8 +87,8 @@
 		21411F8220BDFFF800D9A780 /* shallWe */ = {
 			isa = PBXGroup;
 			children = (
+				21C0C7E32120055300CA6ADD /* LoginViewController.swift */,
 				21411F8320BDFFF800D9A780 /* AppDelegate.swift */,
-				21411F9920BF5D3900D9A780 /* LoginViewController.swift */,
 				21411F9B20C2AACA00D9A780 /* SelectViewController.swift */,
 				2100890820C9E93B0016A49C /* CreateRoomViewController.swift */,
 				21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */,
@@ -291,9 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21411F9A20BF5D3900D9A780 /* LoginViewController.swift in Sources */,
 				2100890920C9E93C0016A49C /* CreateRoomViewController.swift in Sources */,
 				2151D50B21073BED00DC1141 /* LoginUserPost.swift in Sources */,
+				21C0C7E42120055300CA6ADD /* LoginViewController.swift in Sources */,
 				2100890B20CA99650016A49C /* TopViewController.swift in Sources */,
 				2151D50D210A7CD900DC1141 /* ProfileEditViewController.swift in Sources */,
 				218A252121126D6A00EEA502 /* JoinChatViewController.swift in Sources */,
