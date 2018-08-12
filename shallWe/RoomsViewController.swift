@@ -110,15 +110,19 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
     
     override func prepare(for segue:UIStoryboardSegue,sender:Any?){
         
-        let privateChatVC = segue.destination as! PrivateChatViewController
+        let joinChatVC = segue.destination as! JoinChatViewController
         
         //RoomIDを渡したい
-        privateChatVC.roomID = self.posst.roomID
+        joinChatVC.roomID = self.posst.roomID
         //RoomNameを渡したい
-        privateChatVC.roomName = self.posst.roomName
+        joinChatVC.roomName = self.posst.roomName
         //PathToImageを渡したい profile画像用URL
-        privateChatVC.pathToImage = self.posst.pathToImage
-        
+        joinChatVC.pathToImage = self.posst.pathToImage
+        //roomAddmitNumを渡したい 募集人数
+        joinChatVC.roomAddmitNum = self.posst.roomAddmitNum
+        //roomAddmitNumを渡したい 募集人数
+        joinChatVC.roomDetail = self.posst.roomDetail
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

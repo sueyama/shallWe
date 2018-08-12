@@ -16,7 +16,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
     var ownerUserID = Auth.auth().currentUser?.uid
     var roomId:String!
 
-    //ログインユーザの情報のパラメータ
+    //ルーム情報のパラメータ
     @IBOutlet var roomImage: UIImageView!
     @IBOutlet var roomName: String!
     @IBOutlet var roomDetail: UITextView!

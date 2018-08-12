@@ -10,15 +10,38 @@ import UIKit
 
 class JoinChatViewController: UIViewController {
 
+    var roomName = String()
+    var roomID = String()
+    var pathToImage = String()
+    var roomAddmitNum = String()
+    var roomDetail = String()
+
+    //ルーム情報のパラメータ
+    @IBOutlet var RoomImage: UIImageView!
+    @IBOutlet var RoomName: String!
+    @IBOutlet var RoomDetail: String!
+    @IBOutlet var RoomAddmitNum: String!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setRoomInfo()
     }
 
+    func setRoomInfo(){
+        //roomImageのUrl作成
+        let roomImageUrl = URL(string:self.pathToImage as String)!
+        //Cashをとっている
+        self.RoomImage.sd_setImage(with: roomImageUrl, completed: nil)
+
+        self.RoomName = self.roomName
+        self.RoomDetail = self.roomDetail
+        self.RoomAddmitNum = self.roomAddmitNum
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

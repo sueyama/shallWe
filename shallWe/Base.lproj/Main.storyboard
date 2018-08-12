@@ -27,12 +27,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="Fy6-Jw-K5X" kind="presentation" identifier="next" id="PaU-EB-H3P"/>
+                        <segue destination="Fy6-Jw-K5X" kind="presentation" identifier="next" id="5xq-Sb-3sB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="133.09859154929578"/>
+            <point key="canvasLocation" x="1009" y="-602"/>
         </scene>
         <!--Home-->
         <scene sceneID="jxg-Fm-gpW">
@@ -100,7 +100,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve8-4q-m9T">
-                                        <rect key="frame" x="74" y="18" width="42" height="21"/>
+                                        <rect key="frame" x="74" y="18" width="238" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -182,7 +182,7 @@
                     <tabBarItem key="tabBarItem" title="Home" id="1Oy-V4-Rj1"/>
                     <connections>
                         <outlet property="memberRoomTableView" destination="hbI-wy-keK" id="4Sa-dc-nw3"/>
-                        <outlet property="ornerRoomTableView" destination="yXz-iZ-PLC" id="K0k-gB-e7O"/>
+                        <outlet property="ownerRoomTableView" destination="yXz-iZ-PLC" id="TkY-lg-wDA"/>
                         <outlet property="topLoginUserImage" destination="13c-un-eg2" id="uNZ-nX-SXd"/>
                         <outlet property="topLoginUserName" destination="ve8-4q-m9T" id="oVj-Z9-cnK"/>
                         <segue destination="2e3-OG-YNV" kind="presentation" identifier="privateChat" id="oZx-Nv-JGY"/>
@@ -272,6 +272,7 @@
                         <viewLayoutGuide key="safeArea" id="Qku-Pc-WQY"/>
                     </view>
                     <connections>
+                        <outlet property="topLoginProfileDetail" destination="SiQ-5Q-hV2" id="ysj-fC-GOw"/>
                         <outlet property="topLoginUserDetail" destination="SiQ-5Q-hV2" id="ir2-vh-2aY"/>
                         <outlet property="topLoginUserImage" destination="Bml-a9-sQI" id="2F0-og-Agq"/>
                         <outlet property="topLoginUserName" destination="zqp-Tu-aGM" id="hiG-8n-Ive"/>
@@ -338,6 +339,33 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jqn-GU-37o">
                                 <rect key="frame" x="0.0" y="87" width="320" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMc-No-LEr">
+                                        <rect key="frame" x="71" y="0.0" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EF1-sn-tfs">
+                                        <rect key="frame" x="71" y="26" width="234" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4R-dv-TA5">
+                                        <rect key="frame" x="272" y="5" width="33" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKY-bn-d0X">
+                                        <rect key="frame" x="14" y="5" width="49" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAD-PZ-rzX">
@@ -426,6 +454,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qsJ-Dh-gzf"/>
                     </view>
+                    <connections>
+                        <outlet property="RoomAddmitNum" destination="X4R-dv-TA5" id="FAJ-Gq-6K6"/>
+                        <outlet property="RoomDetail" destination="EF1-sn-tfs" id="CBY-eB-xIa"/>
+                        <outlet property="RoomImage" destination="uKY-bn-d0X" id="07U-Ag-i17"/>
+                        <outlet property="RoomName" destination="rMc-No-LEr" id="enb-To-BbG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMv-c8-sfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -561,7 +595,7 @@
         <!--検索-->
         <scene sceneID="8sh-ob-MRf">
             <objects>
-                <viewController id="Ywb-A9-6yZ" customClass="RoomsViewController" sceneMemberID="viewController">
+                <viewController id="Ywb-A9-6yZ" customClass="RoomsViewController" customModule="shallWe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CI7-Ov-a6a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -624,9 +658,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iCc-MH-k7Q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="検索" id="tGx-YS-KI0"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="検索" id="tGx-YS-KI0"/>
                     <connections>
                         <outlet property="roomTableView" destination="vYG-0k-EST" id="7gg-Tq-Xtx"/>
+                        <outlet property="searchBar" destination="4KD-ac-FJc" id="aZH-OR-4Hq"/>
+                        <outlet property="tableView" destination="vYG-0k-EST" id="9HY-2i-gfo"/>
                         <outlet property="testSearchBar" destination="4KD-ac-FJc" id="6nT-Fe-Ctp"/>
                         <segue destination="qVC-Ls-qfv" kind="presentation" identifier="joinChat" id="qDd-G9-wJJ"/>
                     </connections>
@@ -733,11 +769,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="elR-2X-tAC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="新規追加" id="HHX-jT-GUN"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="新規追加" id="HHX-jT-GUN"/>
                     <connections>
                         <outlet property="UITextView" destination="dlJ-m2-JYe" id="eiW-9b-zm0"/>
                         <outlet property="inputRoomNameTextField" destination="PmF-4V-hTa" id="v5C-dc-r8w"/>
                         <outlet property="roomAddmitNum" destination="6n0-Of-XDr" id="yRc-S3-S7D"/>
+                        <outlet property="roomDetail" destination="dlJ-m2-JYe" id="W2S-ab-A0j"/>
                         <outlet property="roomImage" destination="4dm-uF-Fx1" id="dya-IU-sR1"/>
                         <outlet property="roomName" destination="PmF-4V-hTa" id="w7J-q3-4jr"/>
                     </connections>
@@ -749,7 +786,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="seu-9Q-xWN">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Fy6-Jw-K5X" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Fy6-Jw-K5X" customClass="TabBarController" customModule="shallWe" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5v7-sO-YAa">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

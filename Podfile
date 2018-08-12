@@ -10,6 +10,7 @@ target 'shallWe' do
    pod ’Firebase’
    pod ’Firebase/Database’
    pod 'Firebase/Storage'
+   pod 'Firebase/Firestore'
    pod ’Firebase/Auth’
    pod 'Firebase/Core'
    pod ‘GoogleSignIn’

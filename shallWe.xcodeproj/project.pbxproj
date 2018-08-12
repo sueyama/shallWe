@@ -12,6 +12,7 @@
 		2100890D20CB8B100016A49C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100890C20CB8B100016A49C /* Post.swift */; };
 		2100890F20CB9DE40016A49C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100890E20CB9DE40016A49C /* ChatViewController.swift */; };
 		2100891320CDD1370016A49C /* PrivateChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100891220CDD1370016A49C /* PrivateChatViewController.swift */; };
+		210C2D75211C56B5002F2BAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210C2D74211C56B5002F2BAD /* GoogleService-Info.plist */; };
 		21411F8420BDFFF800D9A780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21411F8320BDFFF800D9A780 /* AppDelegate.swift */; };
 		21411F8920BDFFF800D9A780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21411F8720BDFFF800D9A780 /* Main.storyboard */; };
 		21411F8B20BE000B00D9A780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21411F8A20BE000B00D9A780 /* Assets.xcassets */; };
@@ -21,7 +22,7 @@
 		2151D50B21073BED00DC1141 /* LoginUserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2151D50A21073BED00DC1141 /* LoginUserPost.swift */; };
 		2151D50D210A7CD900DC1141 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */; };
 		218A252121126D6A00EEA502 /* JoinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A252021126D6A00EEA502 /* JoinChatViewController.swift */; };
-		21F3274A20E6DEDB00F80B79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */; };
+		21C0C7E2211EAFB000CA6ADD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C0C7E1211EAFB000CA6ADD /* TabBarController.swift */; };
 		21F3274E210199B900F80B79 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274D210199B900F80B79 /* RoomsViewController.swift */; };
 		21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */; };
 		D2C3DDC85022E43623E3DE05 /* Pods_shallWe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920179996B8E2F21880714E7 /* Pods_shallWe.framework */; };
@@ -33,6 +34,7 @@
 		2100890C20CB8B100016A49C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2100890E20CB9DE40016A49C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2100891220CDD1370016A49C /* PrivateChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChatViewController.swift; sourceTree = "<group>"; };
+		210C2D74211C56B5002F2BAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21411F8020BDFFF800D9A780 /* shallWe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shallWe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21411F8320BDFFF800D9A780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21411F8820BDFFF800D9A780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,7 +46,7 @@
 		2151D50A21073BED00DC1141 /* LoginUserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserPost.swift; sourceTree = "<group>"; };
 		2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		218A252021126D6A00EEA502 /* JoinChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatViewController.swift; sourceTree = "<group>"; };
-		21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21C0C7E1211EAFB000CA6ADD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		21F3274D210199B900F80B79 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoViewController.swift; sourceTree = "<group>"; };
 		7D04931EB22A278F89F002C8 /* Pods-shallWe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shallWe.release.xcconfig"; path = "Pods/Target Support Files/Pods-shallWe/Pods-shallWe.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,11 +100,12 @@
 				2151D50A21073BED00DC1141 /* LoginUserPost.swift */,
 				2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */,
 				218A252021126D6A00EEA502 /* JoinChatViewController.swift */,
+				21C0C7E1211EAFB000CA6ADD /* TabBarController.swift */,
 				21411F8720BDFFF800D9A780 /* Main.storyboard */,
 				21411F8A20BE000B00D9A780 /* Assets.xcassets */,
 				21411F8C20BE000B00D9A780 /* LaunchScreen.storyboard */,
 				21411F8F20BE000B00D9A780 /* Info.plist */,
-				21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */,
+				210C2D74211C56B5002F2BAD /* GoogleService-Info.plist */,
 			);
 			path = shallWe;
 			sourceTree = "<group>";
@@ -186,8 +189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21411F8E20BE000B00D9A780 /* LaunchScreen.storyboard in Resources */,
+				210C2D75211C56B5002F2BAD /* GoogleService-Info.plist in Resources */,
 				21411F8B20BE000B00D9A780 /* Assets.xcassets in Resources */,
-				21F3274A20E6DEDB00F80B79 /* GoogleService-Info.plist in Resources */,
 				21411F8920BDFFF800D9A780 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,26 +205,40 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-shallWe/Pods-shallWe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -285,6 +302,7 @@
 				21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */,
 				2100891320CDD1370016A49C /* PrivateChatViewController.swift in Sources */,
 				2100890D20CB8B100016A49C /* Post.swift in Sources */,
+				21C0C7E2211EAFB000CA6ADD /* TabBarController.swift in Sources */,
 				21411F9C20C2AACA00D9A780 /* SelectViewController.swift in Sources */,
 				21411F8420BDFFF800D9A780 /* AppDelegate.swift in Sources */,
 			);
@@ -433,13 +451,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JHQWMQQ85S;
+				DEVELOPMENT_TEAM = 8P4PHY98KQ;
 				INFOPLIST_FILE = shallWe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shunsuke.shallWe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shunsuke.shallWe.team;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -454,13 +472,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JHQWMQQ85S;
+				DEVELOPMENT_TEAM = 8P4PHY98KQ;
 				INFOPLIST_FILE = shallWe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shunsuke.shallWe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shunsuke.shallWe.team;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

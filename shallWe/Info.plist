@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.232649371934-tjvf2kbt5v2kje1khf41tc11f7k5cjan</string>
+				<string>com.googleusercontent.apps.232649371934-r680pgnllk6ir1oikj8qinrtnh0an52o</string>
 			</array>
 		</dict>
 	</array>
@@ -44,6 +44,26 @@
 	<string>カメラを使います</string>
 	<key>NSExceptionDomains</key>
 	<dict>
+		<key>lh3.googleusercontent.com</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+		</dict>
+		<key>shallwe-28db7.appspot.com</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+		</dict>
+		<key>shallwe-28db7.firebaseio.com</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+		</dict>
+		<key>goo.gl</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+		</dict>
 		<key>app-measurement.com</key>
 		<dict>
 			<key>NSExceptionAllowsInsecureHTTPLoads</key>
