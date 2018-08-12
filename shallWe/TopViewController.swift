@@ -85,8 +85,8 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                         if (self.userInfoMap.userID == self.uid)
                         {
                             //ログインユーザの情報設定
-                            self.topLoginUserImage.sd_setImage(with: self.userInfoMap.pathToImage as! URL, completed: nil)
-                            self.topLoginUserName.text = self.userInfoMap.userName
+                            self.topLoginUserImage.sd_setImage(with: URL(string: pathToImage), completed: nil)
+                            self.topLoginUserName.text = userName
                             
                         }
                     }
@@ -103,39 +103,39 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         
         let ref = Database.database().reference()
         //Roomsの配下にあるデータを取得する
-        ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-            let postsSnap = snap.value as! [String:AnyObject]
-            for (_,ownerPost) in postsSnap{
-                //roomID取得
-                if let roomID = ownerPost["roomID"] as? String{
-                    //owner_posst初期化
-                    self.owner_posst = Post()
-                    // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
-                    if let pathToImage = ownerPost["pathToImage"] as? String,
-                        let roomName = ownerPost["roomName"] as? String,
-                        let roomDetail = ownerPost["roomDetail"] as? String,
-                        let roomAddmitNum = ownerPost["roomAddmitNum"] as? String,
-                        let ownerUserID = ownerPost["ownerUserID"] as? String {
-                        //owner_posstの中に入れていく
-                        self.owner_posst.pathToImage = pathToImage
-                        self.owner_posst.roomID = roomID
-                        self.owner_posst.roomName = roomName
-                        self.owner_posst.roomDetail = roomDetail
-                        self.owner_posst.roomAddmitNum = roomAddmitNum
-                        self.owner_posst.ownerUserID = ownerUserID
-
-                        //Databaseのものと比較して住所が同じものだけを入れる
-                        if (self.owner_posst.ownerUserID == self.uid)
-                        {
-                            self.owner_posts.append(self.owner_posst)
-                            self.ownerRoomTableView.reloadData()
+        ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapB) in
+            if(snapB.exists()){
+                let postsSnap = snapB.value as! [String:AnyObject]
+                for (_,ownerPost) in postsSnap{
+                    //roomID取得
+                    if let roomID = ownerPost["roomID"] as? String{
+                        //owner_posst初期化
+                        self.owner_posst = Post()
+                        // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
+                        if let pathToImage = ownerPost["pathToImage"] as? String,
+                            let roomName = ownerPost["roomName"] as? String,
+                            let roomDetail = ownerPost["roomDetail"] as? String,
+                            let roomAddmitNum = ownerPost["roomAddmitNum"] as? String,
+                            let ownerUserID = ownerPost["ownerUserID"] as? String {
+                            //owner_posstの中に入れていく
+                            self.owner_posst.pathToImage = pathToImage
+                            self.owner_posst.roomID = roomID
+                            self.owner_posst.roomName = roomName
+                            self.owner_posst.roomDetail = roomDetail
+                            self.owner_posst.roomAddmitNum = roomAddmitNum
+                            self.owner_posst.ownerUserID = ownerUserID
+                            
+                            //Databaseのものと比較して住所が同じものだけを入れる
+                            if (self.owner_posst.ownerUserID == self.uid)
+                            {
+                                self.owner_posts.append(self.owner_posst)
+                                self.ownerRoomTableView.reloadData()
+                            }
                         }
+                        
                     }
-                    
                 }
             }
-            
-            
         })
     }
 
@@ -144,42 +144,43 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         
         let ref = Database.database().reference()
         //Roomsの配下にあるデータを取得する
-        ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-            let postsSnap = snap.value as! [String:AnyObject]
-            for (_,memberaaPost) in postsSnap{
-                ref.child("RoomsMenber/" + (memberaaPost["ownerUserID"] as? String)!).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapB) in
-                    let userSnap = snapB.value as! [String:AnyObject]
-                    for (_,memberaaPostB) in userSnap{
-                        //roomID取得
-                        if let userIDB = memberaaPostB["userID"] as? String{
-                            if(userIDB == self.uid){
-                                //member_posst初期化
-                                self.member_posst = Post()
-                                // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
-                                if  let pathToImage = memberaaPost["pathToImage"] as? String,
-                                    let roomID = memberaaPost["roomID"] as? String,
-                                    let roomName = memberaaPost["roomName"] as? String,
-                                    let roomDetail = memberaaPost["roomDetail"] as? String,
-                                    let roomAddmitNum = memberaaPost["roomAddmitNum"] as? String,
-                                    let ownerUserID = memberaaPost["ownerUserID"] as? String {
-                                    //owner_posstの中に入れていく
-                                    self.member_posst.pathToImage = pathToImage
-                                    self.member_posst.roomID = roomID
-                                    self.member_posst.roomName = roomName
-                                    self.member_posst.roomDetail = roomDetail
-                                    self.member_posst.roomAddmitNum = roomAddmitNum
-                                    self.member_posst.ownerUserID = ownerUserID
+        ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapC) in            if(snapC.exists()){
+                let postsSnap = snapC.value as! [String:AnyObject]
+                for (_,memberaaPost) in postsSnap{
+                    ref.child("RoomsMenber/" + (memberaaPost["ownerUserID"] as? String)!).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapB) in
+                        let userSnap = snapC.value as! [String:AnyObject]
+                        for (_,memberaaPost) in userSnap{
+                            //roomID取得
+                            if let userIDB = memberaaPost["userID"] as? String{
+                                if(userIDB == self.uid){
+                                    //member_posst初期化
+                                    self.member_posst = Post()
+                                    // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
+                                    if  let pathToImage = memberaaPost["pathToImage"] as? String,
+                                        let roomID = memberaaPost["roomID"] as? String,
+                                        let roomName = memberaaPost["roomName"] as? String,
+                                        let roomDetail = memberaaPost["roomDetail"] as? String,
+                                        let roomAddmitNum = memberaaPost["roomAddmitNum"] as? String,
+                                        let ownerUserID = memberaaPost["ownerUserID"] as? String {
+                                        //owner_posstの中に入れていく
+                                        self.member_posst.pathToImage = pathToImage
+                                        self.member_posst.roomID = roomID
+                                        self.member_posst.roomName = roomName
+                                        self.member_posst.roomDetail = roomDetail
+                                        self.member_posst.roomAddmitNum = roomAddmitNum
+                                        self.member_posst.ownerUserID = ownerUserID
+                                        
+                                        self.member_posts.append(self.member_posst)
+                                        self.memberRoomTableView.reloadData()
+                                    }
                                     
-                                    self.member_posts.append(self.member_posst)
-                                    self.memberRoomTableView.reloadData()
                                 }
-
+                                
                             }
                             
                         }
-
-                    }
-                })
+                    })
+                }
             }
         })
     }
