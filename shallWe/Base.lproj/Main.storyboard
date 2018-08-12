@@ -660,10 +660,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="検索" id="tGx-YS-KI0"/>
                     <connections>
-                        <outlet property="roomTableView" destination="vYG-0k-EST" id="7gg-Tq-Xtx"/>
                         <outlet property="searchBar" destination="4KD-ac-FJc" id="aZH-OR-4Hq"/>
                         <outlet property="tableView" destination="vYG-0k-EST" id="9HY-2i-gfo"/>
-                        <outlet property="testSearchBar" destination="4KD-ac-FJc" id="6nT-Fe-Ctp"/>
                         <segue destination="qVC-Ls-qfv" kind="presentation" identifier="joinChat" id="qDd-G9-wJJ"/>
                     </connections>
                 </viewController>
@@ -771,8 +769,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="新規追加" id="HHX-jT-GUN"/>
                     <connections>
-                        <outlet property="UITextView" destination="dlJ-m2-JYe" id="eiW-9b-zm0"/>
-                        <outlet property="inputRoomNameTextField" destination="PmF-4V-hTa" id="v5C-dc-r8w"/>
                         <outlet property="roomAddmitNum" destination="6n0-Of-XDr" id="yRc-S3-S7D"/>
                         <outlet property="roomDetail" destination="dlJ-m2-JYe" id="W2S-ab-A0j"/>
                         <outlet property="roomImage" destination="4dm-uF-Fx1" id="dya-IU-sR1"/>

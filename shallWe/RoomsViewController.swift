@@ -63,40 +63,40 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         let ref = Database.database().reference()
         //Roomsの配下にあるデータを取得する
         ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-            let postsSnap = snap.value as! [String:AnyObject]
-            for (_,ownerPost) in postsSnap{
-                //roomID取得
-                if let roomID = ownerPost["roomID"] as? String{
-                    //owner_posst初期化
-                    self.posst = Post()
-                    // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
-                    if let pathToImage = ownerPost["pathToImage"] as? String,
-                        let roomName = ownerPost["roomName"] as? String,
-                        let roomDetail = ownerPost["roomDetail"] as? String,
-                        let roomAddmitNum = ownerPost["roomAddmitNum"] as? String,
-                        let ownerUserID = ownerPost["ownerUserID"] as? String {
-                        //posstの中に入れていく
-                        self.posst.pathToImage = pathToImage
-                        self.posst.roomID = roomID
-                        self.posst.roomName = roomName
-                        self.posst.roomDetail = roomDetail
-                        self.posst.roomAddmitNum = roomAddmitNum
-                        self.posst.ownerUserID = ownerUserID
-                        
-                        //Databaseのものと比較して住所が同じものだけを入れる
-                        if (self.searchBar.text == ""){
-                            self.posts.append(self.posst)
-                            self.tableView.reloadData()
-                        } else if (self.posst.roomName.contains(self.searchBar.text!) || self.posst.roomDetail.contains(self.searchBar.text!)){
-                            self.posts.append(self.posst)
-                            self.tableView.reloadData()
+            if(snap.exists()){
+                let postsSnap = snap.value as! [String:AnyObject]
+                for (_,ownerPost) in postsSnap{
+                    //roomID取得
+                    if let roomID = ownerPost["roomID"] as? String{
+                        //owner_posst初期化
+                        self.posst = Post()
+                        // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
+                        if let pathToImage = ownerPost["pathToImage"] as? String,
+                            let roomName = ownerPost["roomName"] as? String,
+                            let roomDetail = ownerPost["roomDetail"] as? String,
+                            let roomAddmitNum = ownerPost["roomAddmitNum"] as? String,
+                            let ownerUserID = ownerPost["ownerUserID"] as? String {
+                            //posstの中に入れていく
+                            self.posst.pathToImage = pathToImage
+                            self.posst.roomID = roomID
+                            self.posst.roomName = roomName
+                            self.posst.roomDetail = roomDetail
+                            self.posst.roomAddmitNum = roomAddmitNum
+                            self.posst.ownerUserID = ownerUserID
+                            
+                            //Databaseのものと比較して住所が同じものだけを入れる
+                            if (self.searchBar.text == ""){
+                                self.posts.append(self.posst)
+                                self.tableView.reloadData()
+                            } else if (self.posst.roomName.contains(self.searchBar.text!) || self.posst.roomDetail.contains(self.searchBar.text!)){
+                                self.posts.append(self.posst)
+                                self.tableView.reloadData()
+                            }
                         }
+                        
                     }
-                    
                 }
             }
-            
-            
         })
     }
     
