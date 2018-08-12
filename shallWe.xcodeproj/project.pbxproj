@@ -24,6 +24,7 @@
 		21F3274A20E6DEDB00F80B79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */; };
 		21F3274E210199B900F80B79 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274D210199B900F80B79 /* RoomsViewController.swift */; };
 		21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */; };
+		A251C4882120549800F7FE52 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A251C4872120549800F7FE52 /* TabBarController.swift */; };
 		D2C3DDC85022E43623E3DE05 /* Pods_shallWe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920179996B8E2F21880714E7 /* Pods_shallWe.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoViewController.swift; sourceTree = "<group>"; };
 		7D04931EB22A278F89F002C8 /* Pods-shallWe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shallWe.release.xcconfig"; path = "Pods/Target Support Files/Pods-shallWe/Pods-shallWe.release.xcconfig"; sourceTree = "<group>"; };
 		920179996B8E2F21880714E7 /* Pods_shallWe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shallWe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A251C4872120549800F7FE52 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D93F84454E1D114F49ADA721 /* Pods-shallWe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shallWe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shallWe/Pods-shallWe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				21411F8C20BE000B00D9A780 /* LaunchScreen.storyboard */,
 				21411F8F20BE000B00D9A780 /* Info.plist */,
 				21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */,
+				A251C4872120549800F7FE52 /* TabBarController.swift */,
 			);
 			path = shallWe;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */,
 				2100891320CDD1370016A49C /* PrivateChatViewController.swift in Sources */,
 				2100890D20CB8B100016A49C /* Post.swift in Sources */,
+				A251C4882120549800F7FE52 /* TabBarController.swift in Sources */,
 				21411F9C20C2AACA00D9A780 /* SelectViewController.swift in Sources */,
 				21411F8420BDFFF800D9A780 /* AppDelegate.swift in Sources */,
 			);
