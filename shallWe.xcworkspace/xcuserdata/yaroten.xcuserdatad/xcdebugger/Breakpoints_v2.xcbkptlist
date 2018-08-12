@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/AppDelegate.swift"
-            timestampString = "555735292.5512331"
+            timestampString = "555744505.892715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/AppDelegate.swift"
-            timestampString = "555735292.5513"
+            timestampString = "555744505.892864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/AppDelegate.swift"
-            timestampString = "555735292.551347"
+            timestampString = "555744505.893062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/AppDelegate.swift"
-            timestampString = "555735292.5513901"
+            timestampString = "555744505.8931659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -250,13 +250,169 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../shallWe/shallWe/LoginViewController.swift"
-            timestampString = "555735497.348518"
+            timestampString = "555744505.8933851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
             landmarkName = "postMyProfile()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/CreateRoomViewController.swift"
+            timestampString = "555744505.893517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "CreateRoomViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.ownerUserID.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.281481"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.ownerUserID.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.284434"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.CreateRoomViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.288884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.CreateRoomViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.292111"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/CreateRoomViewController.swift"
+            timestampString = "555744505.8936009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "CreateRoomViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.roomInfo.getter : Swift.Array&lt;shallWe.Post&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.3014489"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.roomInfo.setter : Swift.Array&lt;shallWe.Post&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.304147"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.CreateRoomViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.306673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "944">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.CreateRoomViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.CreateRoomViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "555743361.308853"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "908">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

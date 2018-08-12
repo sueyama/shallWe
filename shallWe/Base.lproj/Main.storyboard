@@ -735,6 +735,9 @@
                                 <rect key="frame" x="91" y="139" width="41" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="setBackGroundView:" destination="NCp-tO-rob" eventType="touchUpInside" id="PrY-O6-QmD"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xO-Le-w9X">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -762,6 +765,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="作成"/>
+                                <connections>
+                                    <action selector="profileHzn:" destination="NCp-tO-rob" eventType="touchUpInside" id="tQM-jY-KcX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import CoreLocation
 import SDWebImage
+import Photos
 
 class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
         
@@ -18,9 +19,9 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
     //ルーム情報のパラメータ
     @IBOutlet var roomImage: UIImageView!
-    @IBOutlet var roomName: String!
+    @IBOutlet var roomName: UITextField!
     @IBOutlet var roomDetail: UITextView!
-    @IBOutlet var roomAddmitNum: String!
+    @IBOutlet var roomAddmitNum: UITextField!
     
     var roomInfo = [Post]()
     var roomInfoMap = Post()
@@ -29,6 +30,8 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
     super.viewDidLoad()
+        // アルバムの使用許可を取る
+        libraryRequestAuthorization()
 
     // Do any additional setup after loading the view.
     }
@@ -156,7 +159,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                 if url != nil {
                     //feedの中に、キー値と値のマップを入れている
                     //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
-                    let feed = ["roomID":(self.ownerUserID! + self.roomName + self.roomAddmitNum),"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"pathToImage":self.roomImage,"ownerUserID":self.ownerUserID] as [String:Any]
+                    let feed = ["roomID":(self.ownerUserID! + self.roomName.text! + self.roomAddmitNum.text!),"roomName":self.roomName.text!,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum.text!,"pathToImage":self.roomImage,"ownerUserID":self.ownerUserID] as [String:Any]
 
                     //feedにkey値を付ける
                     let postFeed = ["\(key)":feed]
@@ -178,8 +181,29 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
     }
 
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//    @IBAction func back(_ sender: Any) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
+
+    // カメラロールへのアクセス許可
+    fileprivate func libraryRequestAuthorization() {
+        PHPhotoLibrary.requestAuthorization { (status) in
+            
+            switch(status){
+                
+            case .authorized:
+                break
+                
+            case .denied:
+                break
+                
+            case .notDetermined:
+                break
+            case .restricted:
+                break
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
