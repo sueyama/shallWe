@@ -100,12 +100,12 @@
 				2151D50A21073BED00DC1141 /* LoginUserPost.swift */,
 				2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */,
 				218A252021126D6A00EEA502 /* JoinChatViewController.swift */,
+				A251C4872120549800F7FE52 /* TabBarController.swift */,
 				21411F8720BDFFF800D9A780 /* Main.storyboard */,
 				21411F8A20BE000B00D9A780 /* Assets.xcassets */,
 				21411F8C20BE000B00D9A780 /* LaunchScreen.storyboard */,
 				21411F8F20BE000B00D9A780 /* Info.plist */,
 				21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */,
-				A251C4872120549800F7FE52 /* TabBarController.swift */,
 			);
 			path = shallWe;
 			sourceTree = "<group>";

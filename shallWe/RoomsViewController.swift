@@ -39,10 +39,13 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         super.viewDidLoad()
 
         //デリゲート先を自分に設定する。
-        searchBar.delegate = self
+        self.searchBar.delegate = self
 
         //何も入力されていなくてもReturnキーを押せるようにする。
-        searchBar.enablesReturnKeyAutomatically = false
+        self.searchBar.enablesReturnKeyAutomatically = false
+
+        //ViewにsearchBaroをSubViewとして追加
+        self.view.addSubview(self.searchBar)
 
         //ルームのデータを引っ張ってくるメソッド呼び出し
         getRoomsInfo()
@@ -181,23 +184,14 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         return 120.0
     }
     
-    
-    @IBAction func profileEdit(_ sender: Any) {
-        //画面遷移
-        performSegue(withIdentifier: "profileEdit", sender: nil)
-    }
-    
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     //検索ボタン押下時の呼び出しメソッド
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 
+        //キーボードを閉じる。
+        self.view.endEditing(true)
+
         //ルームのデータを引っ張ってくるメソッド呼び出し
         getRoomsInfo()
-        //キーボードを閉じる。
-        self.searchBar.endEditing(true)
     }
     
     //テキスト変更時の呼び出しメソッド
@@ -222,12 +216,11 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         //テーブルを再読み込みする。
         tableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     /*
      // MARK: - Navigation

@@ -273,7 +273,6 @@
                     </view>
                     <connections>
                         <outlet property="topLoginProfileDetail" destination="SiQ-5Q-hV2" id="ysj-fC-GOw"/>
-                        <outlet property="topLoginUserDetail" destination="SiQ-5Q-hV2" id="ir2-vh-2aY"/>
                         <outlet property="topLoginUserImage" destination="Bml-a9-sQI" id="2F0-og-Agq"/>
                         <outlet property="topLoginUserName" destination="zqp-Tu-aGM" id="hiG-8n-Ive"/>
                     </connections>

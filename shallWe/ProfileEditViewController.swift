@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SDWebImage
 
-class ProfileEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class ProfileEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
     //TopViewControllerからパラメーターを取得する
     var uid = Auth.auth().currentUser?.uid
@@ -29,7 +29,8 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.topLoginUserName.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -67,7 +68,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
                         if (self.userInfoMap.userID == self.uid)
                         {
                             //ログインユーザの情報設定
-                            self.topLoginUserImage.sd_setImage(with: self.userInfoMap.pathToImage as! URL, completed: nil)
+                            self.topLoginUserImage.sd_setImage(with: URL(string:  self.userInfoMap.pathToImage), completed: nil)
                             if(self.userInfoMap.userName != "未設定"){
                                 self.topLoginUserName.text = self.userInfoMap.userName
                             }
@@ -195,11 +196,25 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+   
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

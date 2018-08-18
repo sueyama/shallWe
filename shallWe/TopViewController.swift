@@ -217,7 +217,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //uidを渡したい
             profileEditVC.uid = self.uid
             //profileImageを渡したい profile画像用URL
-            profileEditVC.profileImage = self.profileImage! as NSURL
+            //profileEditVC.profileImage = self.profileImage! as NSURL
         }
     }
 
