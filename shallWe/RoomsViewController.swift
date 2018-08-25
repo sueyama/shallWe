@@ -15,6 +15,9 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
     //tableViewとsearchBarの定義
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
+    @IBAction func tapView(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     //LoginViewControllerからパラメーターを取得する
     var uid = Auth.auth().currentUser?.uid
@@ -36,8 +39,12 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
     var posst = Post()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
+        searchBar.barTintColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        // cellに画像を描画した際に下線を左端まで表示する
+        self.tableView.separatorInset = UIEdgeInsets.zero
         //デリゲート先を自分に設定する。
         self.searchBar.delegate = self
 

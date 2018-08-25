@@ -20,6 +20,13 @@
         
         //夕方画面を初期選択にする。
         self.selectedIndex = 0
+
+        // tabberをカスタマイズ
+        // アイコンの色
+        UITabBar.appearance().tintColor = UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0) // yellow
+        // 背景色
+        UITabBar.appearance().barTintColor = UIColor(red: 16/255, green: 24/255, blue: 33/255, alpha: 1.0) // dark black
+
     }
     
     override func didReceiveMemoryWarning() {

@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var container:UIView!
 
     override init() {
+        //ナビゲーションバーの色の設定
+        UINavigationBar.appearance().barTintColor = UIColor(red: 16/255, green: 24/255, blue: 33/255, alpha: 1)
+        
+        //ナビゲーションバーのタイトルテキストの色を設定
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 15)!]
+        
+        
         super.init()
         //firebaseの初期化
         FirebaseApp.configure()
@@ -115,6 +122,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    
 
 }
 

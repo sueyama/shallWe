@@ -46,7 +46,9 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // cellに画像を描画した際に下線を左端まで表示する
+        self.ownerRoomTableView.separatorInset = UIEdgeInsets.zero
+        self.memberRoomTableView.separatorInset = UIEdgeInsets.zero
     }
     
     override func viewDidAppear(_ animated: Bool) {
