@@ -16,8 +16,9 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet var topLoginUserImage: UIImageView!
     @IBOutlet var topLoginUserName: UITextField!
     @IBOutlet weak var topLoginProfileDetail: UITextView!
+    @IBOutlet weak var noImageArea: UIView!
     //保存ボタン
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
 
     //右上の閉じるボタン押下時の挙動
     @IBAction func closeButton(_ sender: Any) {
@@ -38,17 +39,17 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     var userInfoMap = LoginUserPost()
     var data:Data = Data()
     var imageString:String!
-
+    
     //テキストビューの表示領域
     var originalFrame:CGRect?
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //テキストビューの元のframeを取得する
+        //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
         originalFrame = topLoginProfileDetail.frame
+
         //ログインユーザのデータを引っ張ってくるメソッド呼び出し
         getLoginUserInfo()
-
         
     }
 
@@ -62,10 +63,14 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardChangeFrame(_:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
         notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+
+
     }
+    //キーボード表示時の挙動
     @objc func keyboardDidShow(_ notification:Notification){
         
     }
+    //キーボード変更時の挙動
     @objc func keyboardChangeFrame(_ notification:Notification){
         let userInfo = (notification as NSNotification).userInfo!
         let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as!  NSValue).cgRectValue
@@ -75,6 +80,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         textViewFrame.size.height = keyboardFrame.minY - textViewFrame.minY - 70
         topLoginProfileDetail.frame = textViewFrame
     }
+    //キーボード非表示時の挙動
     @objc func keyboardDidHide(_ notification:Notification){
         topLoginProfileDetail.frame = originalFrame!
     }
@@ -181,43 +187,16 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         //カメラ画面(アルバム画面)を閉じる処理
         picker.dismiss(animated: true, completion: nil)
     }
-
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // キーボードを閉じる
         textField.resignFirstResponder()
         return true
     }
-   
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    //見た目の設定
-    func editUI(){
-        //保存ボタンの色設定
-        button.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
-        button.layer.borderWidth = 0 // 枠線の幅
-        button.layer.borderColor = UIColor.red.cgColor // 枠線の色
-        button.layer.cornerRadius = 18.0 // 角丸のサイズ
-        button.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
-        
-        //プロフィール入力欄の見た目の設定
-        topLoginProfileDetail.layer.borderWidth = 1 // 枠線の幅
-        topLoginProfileDetail.layer.borderColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0).cgColor // 枠線の色
-        topLoginProfileDetail.layer.cornerRadius = 8.0 // 角丸のサイズ
-
-    }
     func saveProfile(){
         //FireBaseのDatabaseを宣言
         let ref = Database.database().reference()
@@ -263,4 +242,27 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         
         
     }
+    //見た目の設定
+    func editUI(){
+        //保存ボタンの色設定
+        saveButton.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        saveButton.layer.borderWidth = 0 // 枠線の幅
+        saveButton.layer.borderColor = UIColor.red.cgColor // 枠線の色
+        saveButton.layer.cornerRadius = 18.0 // 角丸のサイズ
+        saveButton.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
+        
+        //プロフィール入力欄の見た目の設定
+        topLoginProfileDetail.layer.borderWidth = 1 // 枠線の幅
+        topLoginProfileDetail.layer.borderColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0).cgColor // 枠線の色
+        topLoginProfileDetail.layer.cornerRadius = 8.0 // 角丸のサイズ
+        //noImageAreaの枠線設定
+        noImageArea.layer.borderWidth = 1
+        noImageArea.layer.borderColor = UIColor(red: 229/255, green: 229/255, blue: 229/255,alpha: 1.0).cgColor
+
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+
 }

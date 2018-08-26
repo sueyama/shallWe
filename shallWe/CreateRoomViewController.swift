@@ -12,7 +12,7 @@ import CoreLocation
 import SDWebImage
 import Photos
 
-class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate{
         
     var ownerUserID = Auth.auth().currentUser?.uid
     var roomId:String!
@@ -20,25 +20,75 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
     //ルーム情報のパラメータ
     @IBOutlet var roomImage: UIImageView!
     @IBOutlet var roomName: UITextField!
-    @IBOutlet var roomDetail: UITextView!
     @IBOutlet var roomAddmitNum: UITextField!
+    @IBOutlet var roomDetail: UITextView!
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var noImageArea: UIView!
     
+    
+    @IBAction func tapView(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func profileHzn(_ sender: Any) {
+        createRoom()
+    }
+
+    @IBAction func setBackGroundView(_ sender: Any) {
+        showAlertViewController()
+    }
+
     var roomInfo = [Post]()
     var roomInfoMap = Post()
-
     var data:Data = Data()
-
-    override func viewDidLoad() {
-    super.viewDidLoad()
-        // アルバムの使用許可を取る
-        libraryRequestAuthorization()
-
-    // Do any additional setup after loading the view.
-    }
+    
+    //テキストビューの表示領域
+    var originalFrame:CGRect?
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
+        originalFrame = roomDetail.frame
 
+    }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        editUI()
+        self.roomName.delegate = self
+        self.roomAddmitNum.delegate = self
+        //roomAddmitNumを数値入力のみにする
+        self.roomAddmitNum.keyboardType = UIKeyboardType.numberPad
+
+        // アルバムの使用許可を取る
+        libraryRequestAuthorization()
+        
+        //通知センターのオブジェクトを作成
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(CreateRoomViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        notification.addObserver(self, selector: #selector(CreateRoomViewController.keyboardChangeFrame(_:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+        notification.addObserver(self, selector: #selector(CreateRoomViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+
+    }
+
+    //キーボード表示時の挙動
+    @objc func keyboardDidShow(_ notification:Notification){
+        
+    }
+    //キーボード変更時の挙動
+    @objc func keyboardChangeFrame(_ notification:Notification){
+        let userInfo = (notification as NSNotification).userInfo!
+        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as!  NSValue).cgRectValue
+        
+        var textViewFrame = roomDetail.frame
+        
+        textViewFrame.size.height = keyboardFrame.minY - textViewFrame.minY - 70
+        roomDetail.frame = textViewFrame
+    }
+    //キーボード非表示時の挙動
+    @objc func keyboardDidHide(_ notification:Notification){
+        roomDetail.frame = originalFrame!
     }
 
     //Postsの取得
@@ -75,9 +125,6 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
         })
     }
 
-    @IBAction func setBackGroundView(_ sender: Any) {
-        showAlertViewController()
-    }
 
     //カメラまたはアルバム使用の際にアラートを出す
     func showAlertViewController(){
@@ -137,53 +184,6 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
         picker.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func profileHzn(_ sender: Any) {
-        //FireBaseのDatabaseを宣言
-        let ref = Database.database().reference()
-        //StorageのURLを取得
-        let storage = Storage.storage().reference(forURL: "gs://shallwe-28db7.appspot.com/")
-        let key = ref.child("Rooms").childByAutoId().key
-        let imageRef = storage.child("Rooms").child(ownerUserID!).child("\(key).png")
-
-        self.data = UIImageJPEGRepresentation(UIImage(named: "roomImage.png")!, 0.6)!
-
-        let uploadTask = imageRef.putData(self.data, metadata: nil) { (metaData, error) in
-            
-            if error != nil {
-                
-                AppDelegate.instance().dismissActivityIndicator()
-                return
-            }
-            //URLはストレージのURL(Firebase上のURLのみを入れる)
-            imageRef.downloadURL(completion: { (url, error) in
-                if url != nil {
-                    //feedの中に、キー値と値のマップを入れている
-                    //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
-                    let feed = ["roomID":(self.ownerUserID! + self.roomName.text! + self.roomAddmitNum.text!),"roomName":self.roomName.text!,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum.text!,"pathToImage":self.roomImage,"ownerUserID":self.ownerUserID] as [String:Any]
-
-                    //feedにkey値を付ける
-                    let postFeed = ["\(key)":feed]
-                    //DatabaseのRoomsの下にすべて入れる
-                    ref.child("Rooms").updateChildValues(postFeed)
-                    //indicatorを止める
-                    AppDelegate.instance().dismissActivityIndicator()
-                    //TOP画面へ遷移
-                    print("ルームの作成が完了しました")
-                    
-                    
-                }
-                
-            })
-        
-        }
-
-        uploadTask.resume()
-
-    }
-
-//    @IBAction func back(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
 
     // カメラロールへのアクセス許可
     fileprivate func libraryRequestAuthorization() {
@@ -206,20 +206,80 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
 
+
+    func createRoom(){
+        //FireBaseのDatabaseを宣言
+        let ref = Database.database().reference()
+        //StorageのURLを取得
+        let storage = Storage.storage().reference(forURL: "gs://shallwe-28db7.appspot.com/")
+        let key = ref.child("Rooms").childByAutoId().key
+        let imageRef = storage.child("Rooms").child(ownerUserID!).child("\(key).png")
+        
+        self.data = UIImageJPEGRepresentation(UIImage(named: "roomImage.png")!, 0.6)!
+        
+        let uploadTask = imageRef.putData(self.data, metadata: nil) { (metaData, error) in
+            
+            if error != nil {
+                
+                AppDelegate.instance().dismissActivityIndicator()
+                return
+            }
+            //URLはストレージのURL(Firebase上のURLのみを入れる)
+            imageRef.downloadURL(completion: { (url, error) in
+                if url != nil {
+                    //feedの中に、キー値と値のマップを入れている
+                    //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
+                    let feed = ["roomID":(self.ownerUserID! + self.roomName.text! + self.roomAddmitNum.text!),"roomName":self.roomName.text!,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum.text!,"pathToImage":self.roomImage,"ownerUserID":self.ownerUserID] as [String:Any]
+                    
+                    //feedにkey値を付ける
+                    let postFeed = ["\(key)":feed]
+                    //DatabaseのRoomsの下にすべて入れる
+                    ref.child("Rooms").updateChildValues(postFeed)
+                    //indicatorを止める
+                    AppDelegate.instance().dismissActivityIndicator()
+                    //TOP画面へ遷移
+                    print("ルームの作成が完了しました")
+                    
+                    
+                }
+                
+            })
+            
+        }
+        uploadTask.resume()
+
+    }
+    //見た目の設定
+    func editUI(){
+        //保存ボタンの色設定
+        createButton.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        createButton.layer.borderWidth = 0 // 枠線の幅
+        createButton.layer.borderColor = UIColor.red.cgColor // 枠線の色
+        createButton.layer.cornerRadius = 18.0 // 角丸のサイズ
+        createButton.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
+        
+        //プロフィール入力欄の見た目の設定
+        roomDetail.layer.borderWidth = 1 // 枠線の幅
+        roomDetail.layer.borderColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0).cgColor // 枠線の色
+        roomDetail.layer.cornerRadius = 8.0 // 角丸のサイズ
+        
+        //noImageAreaの枠線設定
+        noImageArea.layer.borderWidth = 1
+        noImageArea.layer.borderColor = UIColor(red: 229/255, green: 229/255, blue: 229/255,alpha: 1.0).cgColor
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-        
 }
