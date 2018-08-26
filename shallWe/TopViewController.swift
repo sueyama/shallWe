@@ -312,10 +312,12 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     
     @IBAction func profileEdit(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "profilePage")
+        present(nextVC!,animated:true,completion: nil)
         //画面遷移
-        performSegue(withIdentifier: "profileEdit", sender: nil)
+        //performSegue(withIdentifier: "profileEdit", sender: nil)
     }
-    
+     
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

@@ -37,7 +37,7 @@
         <!--ホーム-->
         <scene sceneID="jxg-Fm-gpW">
             <objects>
-                <viewController id="DBo-gt-7bB" customClass="TopViewController" customModule="shallWe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homePage" id="DBo-gt-7bB" customClass="TopViewController" customModule="shallWe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7m-jc-WTZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,6 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="profileEdit:" destination="DBo-gt-7bB" eventType="touchUpInside" id="fCX-Ss-8BC"/>
-                                            <segue destination="K2c-wp-SMs" kind="presentation" identifier="profileEdit" id="dG6-1s-tIh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -189,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="3196.875" y="132.04225352112675"/>
         </scene>
-        <!--Profile Edit View Controller-->
+        <!--プロフィール-->
         <scene sceneID="kbz-FP-EiA">
             <objects>
                 <viewController id="K2c-wp-SMs" customClass="ProfileEditViewController" customModule="shallWe" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,79 +196,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I84-JV-AUp">
-                                <rect key="frame" x="283" y="46" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="close"/>
-                                <connections>
-                                    <action selector="back:" destination="K2c-wp-SMs" eventType="touchUpInside" id="RPp-Lh-SPd"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqp-Tu-aGM">
-                                <rect key="frame" x="124" y="115" width="176" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="プロフィールを自由に入力して下さい！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SiQ-5Q-hV2">
-                                <rect key="frame" x="28" y="201" width="259" height="290"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bml-a9-sQI" customClass="CircleImageView" customModule="shallWe" customModuleProvider="target">
-                                <rect key="frame" x="20" y="87" width="86" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAG-g0-k4c">
-                                <rect key="frame" x="87" y="145" width="41" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="camera"/>
-                                <connections>
-                                    <action selector="setBackGroundView:" destination="K2c-wp-SMs" eventType="touchUpInside" id="0Zb-RF-J2A"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-Kw-gXd">
-                                <rect key="frame" x="83" y="515" width="154" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="保存"/>
-                                <connections>
-                                    <action selector="profileHzn:" destination="K2c-wp-SMs" eventType="touchUpInside" id="mWt-Tv-XzE"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="プロフィール" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3Q-Kd-6Nt">
-                                <rect key="frame" x="0.0" y="41" width="320" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbg-Ye-xym">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bml-a9-sQI" customClass="CircleImageView" customModule="shallWe" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="22" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMa-sJ-MC6">
+                                        <rect key="frame" x="93" y="86" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAG-g0-k4c">
+                                                <rect key="frame" x="5" y="7" width="20" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="Camera_Icon"/>
+                                                <connections>
+                                                    <action selector="setBackGroundView:" destination="K2c-wp-SMs" eventType="touchUpInside" id="0Zb-RF-J2A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds " value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="zqp-Tu-aGM">
+                                        <rect key="frame" x="126" y="52" width="163" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-Kw-gXd">
+                                        <rect key="frame" x="63" y="416" width="195" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="保存"/>
+                                        <connections>
+                                            <action selector="profileHzn:" destination="K2c-wp-SMs" eventType="touchUpInside" id="mWt-Tv-XzE"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="プロフィール未設定" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bEe-1g-dQs">
+                                        <rect key="frame" x="30" y="138" width="260" height="252"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qku-Pc-WQY"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="プロフィール" id="EpL-D5-9U9">
+                        <barButtonItem key="rightBarButtonItem" image="Close_Icon" style="done" id="gVg-Oh-gA8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="closeButton:" destination="K2c-wp-SMs" id="LpN-KP-kuc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="topLoginProfileDetail" destination="SiQ-5Q-hV2" id="ysj-fC-GOw"/>
+                        <outlet property="button" destination="v4H-Kw-gXd" id="oa8-F5-gH5"/>
+                        <outlet property="topLoginProfileDetail" destination="bEe-1g-dQs" id="gKA-Ee-Fyu"/>
                         <outlet property="topLoginUserImage" destination="Bml-a9-sQI" id="2F0-og-Agq"/>
                         <outlet property="topLoginUserName" destination="zqp-Tu-aGM" id="hiG-8n-Ive"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9KV-Vw-UfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4203.75" y="-154.22535211267606"/>
+            <point key="canvasLocation" x="5201.25" y="-154.22535211267606"/>
         </scene>
         <!--Private Chat View Controller-->
         <scene sceneID="fDR-Zq-coj">
@@ -809,8 +819,28 @@
             </objects>
             <point key="canvasLocation" x="3195" y="972.88732394366195"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wQj-dT-scF">
+            <objects>
+                <navigationController storyboardIdentifier="profilePage" automaticallyAdjustsScrollViewInsets="NO" id="WgQ-V2-SST" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWh-IU-ZXb">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K2c-wp-SMs" kind="relationship" relationship="rootViewController" id="4op-07-9Ys"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3J8-9F-NZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4203.75" y="-154.22535211267606"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Camera_Icon" width="30" height="26"/>
+        <image name="Close_Icon" width="27" height="27"/>
         <image name="Create_Icon" width="31" height="30"/>
         <image name="Home_Icon" width="22" height="31"/>
         <image name="Search_Icon" width="25" height="25"/>

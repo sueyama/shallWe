@@ -12,35 +12,73 @@ import SDWebImage
 
 class ProfileEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
-    //TopViewControllerからパラメーターを取得する
-    var uid = Auth.auth().currentUser?.uid
-    var profileImage:NSURL!
-    
     //ログインユーザの情報のパラメータ
     @IBOutlet var topLoginUserImage: UIImageView!
     @IBOutlet var topLoginUserName: UITextField!
-    @IBOutlet var topLoginProfileDetail: UITextView!
-    
+    @IBOutlet weak var topLoginProfileDetail: UITextView!
+    //保存ボタン
+    @IBOutlet weak var button: UIButton!
+
+    //右上の閉じるボタン押下時の挙動
+    @IBAction func closeButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func setBackGroundView(_ sender: Any) {
+        showAlertViewController()
+    }
+    @IBAction func profileHzn(_ sender: Any) {
+        saveProfile()
+    }
+
+    //TopViewControllerからパラメーターを取得する
+    var uid = Auth.auth().currentUser?.uid
+    var profileImage:NSURL!
+
     var userInfo = [LoginUserPost]()
     var userInfoMap = LoginUserPost()
-    
     var data:Data = Data()
     var imageString:String!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.topLoginUserName.delegate = self
-        // Do any additional setup after loading the view.
-    }
+
+    //テキストビューの表示領域
+    var originalFrame:CGRect?
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        //テキストビューの元のframeを取得する
+        originalFrame = topLoginProfileDetail.frame
         //ログインユーザのデータを引っ張ってくるメソッド呼び出し
         getLoginUserInfo()
 
+        
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        editUI()
+        self.topLoginUserName.delegate = self
+        
+        //通知センターのオブジェクトを作成
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardChangeFrame(_:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+        notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    @objc func keyboardDidShow(_ notification:Notification){
+        
+    }
+    @objc func keyboardChangeFrame(_ notification:Notification){
+        let userInfo = (notification as NSNotification).userInfo!
+        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as!  NSValue).cgRectValue
+        
+        var textViewFrame = topLoginProfileDetail.frame
+
+        textViewFrame.size.height = keyboardFrame.minY - textViewFrame.minY - 70
+        topLoginProfileDetail.frame = textViewFrame
+    }
+    @objc func keyboardDidHide(_ notification:Notification){
+        topLoginProfileDetail.frame = originalFrame!
+    }
+
 
     //Postsの取得
     func getLoginUserInfo(){
@@ -85,9 +123,6 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         })
     }
 
-    @IBAction func setBackGroundView(_ sender: Any) {
-        showAlertViewController()
-    }
     
     //カメラまたはアルバム使用の際にアラートを出す
     func showAlertViewController(){
@@ -147,7 +182,43 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         picker.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func profileHzn(_ sender: Any) {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
+    }
+   
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    //見た目の設定
+    func editUI(){
+        //保存ボタンの色設定
+        button.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        button.layer.borderWidth = 0 // 枠線の幅
+        button.layer.borderColor = UIColor.red.cgColor // 枠線の色
+        button.layer.cornerRadius = 18.0 // 角丸のサイズ
+        button.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
+        
+        //プロフィール入力欄の見た目の設定
+        topLoginProfileDetail.layer.borderWidth = 1 // 枠線の幅
+        topLoginProfileDetail.layer.borderColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0).cgColor // 枠線の色
+        topLoginProfileDetail.layer.cornerRadius = 8.0 // 角丸のサイズ
+
+    }
+    func saveProfile(){
         //FireBaseのDatabaseを宣言
         let ref = Database.database().reference()
         //StorageのURLを取得
@@ -189,41 +260,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         uploadTask.resume()
-
+        
+        
     }
-
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // キーボードを閉じる
-        textField.resignFirstResponder()
-        return true
-    }
-   
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
