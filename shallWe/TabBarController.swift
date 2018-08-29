@@ -18,7 +18,7 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //夕方画面を初期選択にする。
+        //TOP画面を初期選択にする。
         self.selectedIndex = 0
 
         // tabberをカスタマイズ

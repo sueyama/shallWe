@@ -158,8 +158,9 @@ class PrivateChatViewController: JSQMessagesViewController {
         print(random)
         decodedImage = UIImage(named: "\(random).png")!
         
-        let imageData2 :NSData = try! NSData(contentsOf: URL(string: pathToImage)!,options: NSData.ReadingOptions.mappedIfSafe)
-        iconImage = UIImage(data:imageData2 as Data)!
+        let imageData2 :NSData = try! NSData(contentsOf: URL(string: self.pathToImage)!,options: NSData.ReadingOptions.mappedIfSafe)
+        //iconImage = UIImage(data:imageData2 as Data)!
+        iconImage = UIImage(named: "background.jpg")!
         //吹き出しの設定
         let bubbleFactory = JSQMessagesBubbleImageFactory()
         self.incomingBubble = bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())

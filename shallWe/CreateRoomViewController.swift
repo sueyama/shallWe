@@ -16,7 +16,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
         
     var ownerUserID = Auth.auth().currentUser?.uid
     var roomId:String!
-
+    var profileImage:URL!
     //ルーム情報のパラメータ
     @IBOutlet var roomImage: UIImageView!
     @IBOutlet var roomName: UITextField!
@@ -91,41 +91,6 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
         roomDetail.frame = originalFrame!
     }
 
-    //Postsの取得
-    func getLoginUserInfo(){
-
-        let ref = Database.database().reference()
-        //Roomsの配下にあるデータを取得する
-        ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-            let postsSnap = snap.value as! [String:AnyObject]
-            for (_,roomInfo) in postsSnap{
-                //userId取得
-                if let ownerUserID = roomInfo["ownerUserID"] as? String{
-                    //post初期化
-                    self.roomInfoMap = Post()
-                    // ,で区切ってpathToImage,userID,userName・・・取得
-                    if let pathToImage = roomInfo["pathToImage"] as? String,
-                        let userName = roomInfo["userName"] as? String,
-                        let profileDetail = roomInfo["profileDetail"] as? String
-                    {
-                        //posstの中に入れていく
-                        self.roomInfoMap.pathToImage = pathToImage
-                        self.roomInfoMap.ownerUserID = self.ownerUserID
-                        
-                        if (self.roomInfoMap.ownerUserID == self.ownerUserID)
-                        {
-                            
-                        }
-                    }
-                    
-                }
-            }
-            
-            
-        })
-    }
-
-
     //カメラまたはアルバム使用の際にアラートを出す
     func showAlertViewController(){
         //アラートビューを生成
@@ -179,7 +144,8 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 
         //プロフィールの写真に設置する
-        self.roomImage = info[UIImagePickerControllerOriginalImage] as? UIImageView
+        self.roomImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
         //カメラ画面(アルバム画面)を閉じる処理
         picker.dismiss(animated: true, completion: nil)
     }
@@ -215,9 +181,13 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
         let key = ref.child("Rooms").childByAutoId().key
         let imageRef = storage.child("Rooms").child(ownerUserID!).child("\(key).png")
         
-        self.data = UIImageJPEGRepresentation(UIImage(named: "roomImage.png")!, 0.6)!
+        var imageData:NSData = NSData()
         
-        let uploadTask = imageRef.putData(self.data, metadata: nil) { (metaData, error) in
+        if let image = self.profileImage{
+            imageData = try! NSData(contentsOf: image as URL)
+        }
+        
+        let uploadTask = imageRef.putData(imageData as Data, metadata: nil) { (metaData, error) in
             
             if error != nil {
                 
@@ -229,8 +199,8 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                 if url != nil {
                     //feedの中に、キー値と値のマップを入れている
                     //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
-                    let feed = ["roomID":(self.ownerUserID! + self.roomName.text! + self.roomAddmitNum.text!),"roomName":self.roomName.text!,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum.text!,"pathToImage":self.roomImage,"ownerUserID":self.ownerUserID] as [String:Any]
-                    
+                    let feed = ["roomID":key,"roomName":self.roomName.text,"roomDetail":self.roomDetail.text,"roomAddmitNum":self.roomAddmitNum.text,"pathToImage":url?.absoluteString,"ownerUserID":self.ownerUserID!] as [String:Any]
+        
                     //feedにkey値を付ける
                     let postFeed = ["\(key)":feed]
                     //DatabaseのRoomsの下にすべて入れる
@@ -239,14 +209,16 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                     AppDelegate.instance().dismissActivityIndicator()
                     //TOP画面へ遷移
                     print("ルームの作成が完了しました")
-                    
-                    
+                    //TOPnのタブの
+                    self.tabBarController?.selectedIndex = 0
                 }
                 
             })
             
         }
+        
         uploadTask.resume()
+
 
     }
     //見た目の設定

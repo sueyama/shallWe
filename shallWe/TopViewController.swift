@@ -46,6 +46,14 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // delegateを設定する
+        ownerRoomTableView.dataSource = self
+        ownerRoomTableView.delegate = self
+        
+        memberRoomTableView.dataSource = self
+        memberRoomTableView.delegate = self
+
+        
         // cellに画像を描画した際に下線を左端まで表示する
         self.ownerRoomTableView.separatorInset = UIEdgeInsets.zero
         self.memberRoomTableView.separatorInset = UIEdgeInsets.zero
@@ -210,7 +218,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //RoomNameを渡したい
             privateChatVC.roomName = self.posst.roomName
             //PathToImageを渡したい profile画像用URL
-            privateChatVC.pathToImage = profileImage.absoluteString!
+            privateChatVC.pathToImage = self.posst.pathToImage
         }
         
         if(segue.identifier == "profileEdit"){
@@ -230,26 +238,26 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath)
             
             //ルームの写真
-            //Tagに「0」を振っている
-            let roomImageView = cell.contentView.viewWithTag(0) as! UIImageView
+            //Tagに「3」を振っている
+            let roomImageView = cell.contentView.viewWithTag(3) as! UIImageView
             //ownernameにタグを付ける
             let roomImageUrl = URL(string:self.owner_posts[indexPath.row].pathToImage as String)!
             //Cashをとっている
             roomImageView.sd_setImage(with: roomImageUrl, completed: nil)
             
             //ルーム名
-            //Tagに「1」を振っている
-            let roomNameLabel = cell.contentView.viewWithTag(1) as! UILabel
+            //Tagに「4」を振っている
+            let roomNameLabel = cell.contentView.viewWithTag(4) as! UILabel
             roomNameLabel.text = self.owner_posts[indexPath.row].roomName
             
             //ルーム詳細
-            //Tagに「2」を振っている
-            let roomDetailLabel = cell.contentView.viewWithTag(2) as! UILabel
+            //Tagに「5」を振っている
+            let roomDetailLabel = cell.contentView.viewWithTag(5) as! UILabel
             roomDetailLabel.text = self.owner_posts[indexPath.row].roomDetail
 
             //ルーム人数
-            //Tagに「3」を振っている
-            let roomAddmitNumLabel = cell.contentView.viewWithTag(3) as! UILabel
+            //Tagに「6」を振っている
+            let roomAddmitNumLabel = cell.contentView.viewWithTag(6) as! UILabel
             roomAddmitNumLabel.text = self.owner_posts[indexPath.row].roomAddmitNum
             
             return cell
@@ -259,26 +267,26 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath)
             
             //ルームの写真
-            //Tagに「0」を振っている
-            let roomImageView = cell.contentView.viewWithTag(0) as! UIImageView
+            //Tagに「7」を振っている
+            let roomImageView = cell.contentView.viewWithTag(7) as! UIImageView
             //ownernameにタグを付ける
             let roomImageUrl = URL(string:self.member_posts[indexPath.row].pathToImage as String)!
             //Cashをとっている
             roomImageView.sd_setImage(with: roomImageUrl, completed: nil)
             
             //ルーム名
-            //Tagに「1」を振っている
-            let roomNameLabel = cell.contentView.viewWithTag(1) as! UILabel
+            //Tagに「8」を振っている
+            let roomNameLabel = cell.contentView.viewWithTag(8) as! UILabel
             roomNameLabel.text = self.member_posts[indexPath.row].roomName
             
             //ルーム詳細
-            //Tagに「2」を振っている
-            let roomDetailLabel = cell.contentView.viewWithTag(2) as! UILabel
+            //Tagに「9」を振っている
+            let roomDetailLabel = cell.contentView.viewWithTag(9) as! UILabel
             roomDetailLabel.text = self.member_posts[indexPath.row].roomDetail
             
             //ルーム人数
-            //Tagに「3」を振っている
-            let roomAddmitNumLabel = cell.contentView.viewWithTag(3) as! UILabel
+            //Tagに「10」を振っている
+            let roomAddmitNumLabel = cell.contentView.viewWithTag(10) as! UILabel
             roomAddmitNumLabel.text = self.member_posts[indexPath.row].roomAddmitNum
             
             return cell
@@ -304,10 +312,10 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         return 0
     }
 
-    // Cell の高さを１２０にする
+    // Cell の高さを60にする
     func tableView(_ table: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return 60.0
     }
     
     
@@ -318,11 +326,6 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         //performSegue(withIdentifier: "profileEdit", sender: nil)
     }
      
-    
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

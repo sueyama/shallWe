@@ -114,28 +114,6 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
         //Users以下のdatabaseのアップデートをする
         ref.child("Users").updateChildValues(postFeed)
         AppDelegate.instance().dismissActivityIndicator()
-
-        //アップロードしたimagefileを置く
-//        let uploadTask = imageRef.putData(imageData as Data, metadata: nil,completion:{ (metaData, error) in
-//            if error != nil {
-//                //エラーが出たらindevatorをストップさせる
-//                AppDelegate.instance().dismissActivityIndicator()
-//                return
-//            }
-//
-//            imageRef.downloadURL(completion: { (url, error) in
-//                if url != nil {
-//                    //userId,postIdをkeyとしてpostimageをfeedという変数に設定
-//                    let feed = ["userID":self.uid!,"pathToImage":self.profileImage.absoluteString,"postID":key,"userName":"未設定","profileDetail":"未設定"] as [String:Any]
-//                    let postFeed = ["\(key)":feed]
-//                    //Users以下のdatabaseのアップデートをする
-//                    ref.child("Users").updateChildValues(postFeed)
-//                    //Indicatorをストップする
-//                    AppDelegate.instance().dismissActivityIndicator()
-//                }
-//            })
-//        })
-//        uploadTask.resume()
     }
     
     func catchLocationData(){

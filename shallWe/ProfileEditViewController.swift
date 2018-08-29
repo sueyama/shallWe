@@ -205,7 +205,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         let key = ref.child("Users").childByAutoId().key
         let imageRef = storage.child("Users").child(uid!).child("\(key).png")
         
-        self.data = UIImageJPEGRepresentation(UIImage(named: "profileImage.png")!, 0.6)!
+        self.data = UIImageJPEGRepresentation(UIImage(named: "background.png")!, 0.6)!
         
         let uploadTask = imageRef.putData(self.data, metadata: nil) { (metaData, error) in
             
@@ -223,7 +223,6 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
                     
                     //feedにkey値を付ける
                     let postFeed = ["\(key)":feed]
-                    self.imageString = self.profileImage.absoluteString
                     //DatabaseのRoomsの下にすべて入れる
                     ref.child("Users").updateChildValues(postFeed)
                     //indicatorを止める
