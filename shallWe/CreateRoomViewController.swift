@@ -183,8 +183,8 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
         
         var imageData:NSData = NSData()
         
-        if let image = self.profileImage{
-            imageData = try! NSData(contentsOf: image as URL)
+        if let image = self.roomImage.image{
+            imageData = UIImageJPEGRepresentation(image, 0.5)! as NSData
         }
         
         let uploadTask = imageRef.putData(imageData as Data, metadata: nil) { (metaData, error) in
