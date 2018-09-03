@@ -12,9 +12,9 @@ import Firebase
 
 class PrivateChatViewController: JSQMessagesViewController {
 
-    var roomName = String()
-    var roomID = String()
-    var pathToImage = String()
+    var roomName:String!
+    var roomID:String!
+    var pathToImage:String!
     var backGroundImage:UIImage = UIImage()
 
     //吹き出しの部分の変数を定義
@@ -176,7 +176,7 @@ class PrivateChatViewController: JSQMessagesViewController {
     //メッセージをFirebaseに入れる
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
-        let rootRef = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/").child("message").child(roomID)
+        let rootRef = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/").child("message").child(self.roomID)
         let timestamp = Int(NSDate().timeIntervalSince1970)
         let post:Dictionary<String,Any>? = ["from":senderId,"name":senderDisplayName,"text":text,"timestamp":timestamp,"profileImage":pathToImage]
         let postRef = rootRef.childByAutoId()
@@ -187,7 +187,7 @@ class PrivateChatViewController: JSQMessagesViewController {
     func getInfo(){
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        let firebase = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/").child("message").child(roomID)
+        let firebase = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/").child("message").child(self.roomID)
         firebase.observe(.childAdded, with:{
             (snapshot) in
             if let dictionary = snapshot.value as? [String:AnyObject]{

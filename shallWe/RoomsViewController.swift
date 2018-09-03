@@ -15,10 +15,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
     //tableViewとsearchBarの定義
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
-    @IBAction func tapView(_ sender: Any) {
-        view.endEditing(true)
-    }
-    
+
     //LoginViewControllerからパラメーターを取得する
     var uid = Auth.auth().currentUser?.uid
     
@@ -42,18 +39,19 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         
         super.viewDidLoad()
 
-        searchBar.barTintColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        self.searchBar.barTintColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
         // cellに画像を描画した際に下線を左端まで表示する
         self.tableView.separatorInset = UIEdgeInsets.zero
         //デリゲート先を自分に設定する。
         self.searchBar.delegate = self
-
+        
         //何も入力されていなくてもReturnキーを押せるようにする。
         self.searchBar.enablesReturnKeyAutomatically = false
 
-        //ViewにsearchBaroをSubViewとして追加
-        self.view.addSubview(self.searchBar)
-
+        // delegateを設定する
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
         //ルームのデータを引っ張ってくるメソッド呼び出し
         getRoomsInfo()
 
@@ -141,30 +139,29 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath)
         
         //ルームの写真
-        //Tagに「0」を振っている
-        let roomImageView = cell.contentView.viewWithTag(0) as! UIImageView
+        //Tagに「1」を振っている
+        let roomImageView = cell.contentView.viewWithTag(1) as! UIImageView
         //ownernameにタグを付ける
         let roomImageUrl = URL(string:self.posts[indexPath.row].pathToImage as String)!
         //Cashをとっている
         roomImageView.sd_setImage(with: roomImageUrl, completed: nil)
         
         //ルーム名
-        //Tagに「1」を振っている
-        let roomNameLabel = cell.contentView.viewWithTag(1) as! UILabel
+        //Tagに「2」を振っている
+        let roomNameLabel = cell.contentView.viewWithTag(2) as! UILabel
         roomNameLabel.text = self.posts[indexPath.row].roomName
         
         //ルーム詳細
-        //Tagに「2」を振っている
-        let roomDetailLabel = cell.contentView.viewWithTag(2) as! UILabel
+        //Tagに「3」を振っている
+        let roomDetailLabel = cell.contentView.viewWithTag(3) as! UILabel
         roomDetailLabel.text = self.posts[indexPath.row].roomDetail
         
         //ルーム人数
-        //Tagに「3」を振っている
-        let roomAddmitNumLabel = cell.contentView.viewWithTag(3) as! UILabel
+        //Tagに「4」を振っている
+        let roomAddmitNumLabel = cell.contentView.viewWithTag(4) as! UILabel
         roomAddmitNumLabel.text = self.posts[indexPath.row].roomAddmitNum
         
-        return tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath)
-        
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -185,24 +182,25 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         return num
     }
     
-    // Cell の高さを１２０にする
+    // Cell の高さを60にする
     func tableView(_ table: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return 60.0
     }
     
     //検索ボタン押下時の呼び出しメソッド
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
         //キーボードを閉じる。
-        self.view.endEditing(true)
-
+        self.searchBar.endEditing(true)
+        //検索結果配列を空にする。
+        self.posts.removeAll()
         //ルームのデータを引っ張ってくるメソッド呼び出し
         getRoomsInfo()
     }
     
     //テキスト変更時の呼び出しメソッド
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         //辺作結果の配列をコピーする
         self.postsCopy = self.posts
@@ -221,9 +219,13 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
             }
         }
         //テーブルを再読み込みする。
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
