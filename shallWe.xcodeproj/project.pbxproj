@@ -21,6 +21,7 @@
 		2151D50B21073BED00DC1141 /* LoginUserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2151D50A21073BED00DC1141 /* LoginUserPost.swift */; };
 		2151D50D210A7CD900DC1141 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */; };
 		218A252121126D6A00EEA502 /* JoinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A252021126D6A00EEA502 /* JoinChatViewController.swift */; };
+		21DFCA32213FFA70003E350C /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DFCA31213FFA70003E350C /* Member.swift */; };
 		21F3274A20E6DEDB00F80B79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */; };
 		21F3274E210199B900F80B79 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274D210199B900F80B79 /* RoomsViewController.swift */; };
 		21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */; };
@@ -46,6 +47,7 @@
 		2151D50A21073BED00DC1141 /* LoginUserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserPost.swift; sourceTree = "<group>"; };
 		2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		218A252021126D6A00EEA502 /* JoinChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatViewController.swift; sourceTree = "<group>"; };
+		21DFCA31213FFA70003E350C /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21F3274D210199B900F80B79 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				2100890E20CB9DE40016A49C /* ChatViewController.swift */,
 				2100891220CDD1370016A49C /* PrivateChatViewController.swift */,
 				2100890C20CB8B100016A49C /* Post.swift */,
+				21DFCA31213FFA70003E350C /* Member.swift */,
 				2151D50A21073BED00DC1141 /* LoginUserPost.swift */,
 				2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */,
 				218A252021126D6A00EEA502 /* JoinChatViewController.swift */,
@@ -295,6 +298,7 @@
 				21411F9C20C2AACA00D9A780 /* SelectViewController.swift in Sources */,
 				A2869B1921318C7F00E5E79E /* CircleImageView.swift in Sources */,
 				21411F8420BDFFF800D9A780 /* AppDelegate.swift in Sources */,
+				21DFCA32213FFA70003E350C /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +446,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8P4PHY98KQ;
+				GCC_OPTIMIZATION_LEVEL = 1;
 				INFOPLIST_FILE = shallWe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
