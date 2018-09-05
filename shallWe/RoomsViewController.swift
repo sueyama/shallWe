@@ -18,7 +18,8 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
 
     //LoginViewControllerからパラメーターを取得する
     var uid = Auth.auth().currentUser?.uid
-    
+    var profileImage:NSURL!
+
     //比べる用
     var address:String = String()
     var posts = [Post]()
@@ -128,8 +129,10 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         joinChatVC.pathToImage = self.posst.pathToImage
         //roomAddmitNumを渡したい 募集人数
         joinChatVC.roomAddmitNum = self.posst.roomAddmitNum
-        //roomAddmitNumを渡したい 募集人数
+        //roomDetailを渡したい ルーム詳細
         joinChatVC.roomDetail = self.posst.roomDetail
+        //roomDetailを渡したい ルーム詳細
+        joinChatVC.ownerUserID = self.posst.ownerUserID
 
     }
     
