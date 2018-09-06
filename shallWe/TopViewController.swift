@@ -154,42 +154,32 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         
         let ref = Database.database().reference()
         //Roomsの配下にあるデータを取得する
-        ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapC) in            if(snapC.exists()){
+        ref.child("Menber").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapC) in            if(snapC.exists()){
                 let postsSnap = snapC.value as! [String:AnyObject]
                 for (_,memberaaPost) in postsSnap{
-                    ref.child("RoomsMenber/" + (memberaaPost["ownerUserID"] as? String)!).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapB) in
-                        let userSnap = snapC.value as! [String:AnyObject]
-                        for (_,memberaaPost) in userSnap{
-                            //roomID取得
-                            if let userIDB = memberaaPost["userID"] as? String{
-                                if(userIDB == self.uid){
-                                    //member_posst初期化
-                                    self.member_posst = Post()
-                                    // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
-                                    if  let pathToImage = memberaaPost["pathToImage"] as? String,
-                                        let roomID = memberaaPost["roomID"] as? String,
-                                        let roomName = memberaaPost["roomName"] as? String,
-                                        let roomDetail = memberaaPost["roomDetail"] as? String,
-                                        let roomAddmitNum = memberaaPost["roomAddmitNum"] as? String,
-                                        let ownerUserID = memberaaPost["ownerUserID"] as? String {
-                                        //owner_posstの中に入れていく
-                                        self.member_posst.pathToImage = pathToImage
-                                        self.member_posst.roomID = roomID
-                                        self.member_posst.roomName = roomName
-                                        self.member_posst.roomDetail = roomDetail
-                                        self.member_posst.roomAddmitNum = roomAddmitNum
-                                        self.member_posst.ownerUserID = ownerUserID
-                                        
-                                        self.member_posts.append(self.member_posst)
-                                        self.memberRoomTableView.reloadData()
-                                    }
-                                    
-                                }
+                    //roomID取得
+                    if let userID = memberaaPost["userID"] as? String{
+                        if(userID == self.uid){
+                            // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
+                            if  let roomID = memberaaPost["roomID"] as? String,
+                                let roomImage = memberaaPost["roomImage"] as? String,
+                                let roomName = memberaaPost["roomName"] as? String,
+                                let roomDetail = memberaaPost["roomDetail"] as? String,
+                                let roomAddmitNum = memberaaPost["roomAddmitNum"] as? String {
+                                //owner_posstの中に入れていく
+                                self.member_posst.roomImage = roomImage
+                                self.member_posst.roomID = roomID
+                                self.member_posst.roomName = roomName
+                                self.member_posst.roomDetail = roomDetail
+                                self.member_posst.roomAddmitNum = roomAddmitNum
                                 
+                                self.member_posts.append(self.member_posst)
+                                self.memberRoomTableView.reloadData()
                             }
                             
                         }
-                    })
+                        
+                    }
                 }
             }
         })
@@ -203,12 +193,12 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             posst = member_posst
         }
         //画面遷移
-        performSegue(withIdentifier: "privateChat", sender: indexPath)
+        performSegue(withIdentifier: "privateChat", sender: tableView.tag)
         
     }
     
     
-    override func prepare(for segue:UIStoryboardSegue,sender:Any?){
+    override func prepare(for segue:UIStoryboardSegue,sender: Any?){
         
         if(segue.identifier == "privateChat"){
             let privateChatVC = segue.destination as! PrivateChatViewController
@@ -227,7 +217,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //uidを渡したい
             profileEditVC.uid = self.uid
             //profileImageを渡したい profile画像用URL
-            //profileEditVC.profileImage = self.profileImage! as NSURL
+            profileEditVC.profileImage = self.userInfoMap.pathToImage
         }
     }
 
@@ -320,10 +310,10 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     
     @IBAction func profileEdit(_ sender: Any) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "profilePage")
-        present(nextVC!,animated:true,completion: nil)
+        //let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "profileEdit")
+        //present(nextVC!,animated:true,completion: nil)
         //画面遷移
-        //performSegue(withIdentifier: "profileEdit", sender: nil)
+        performSegue(withIdentifier: "profileEdit", sender: nil)
     }
      
     override func didReceiveMemoryWarning() {

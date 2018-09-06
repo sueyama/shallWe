@@ -22,6 +22,7 @@
 		2151D50D210A7CD900DC1141 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */; };
 		218A252121126D6A00EEA502 /* JoinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A252021126D6A00EEA502 /* JoinChatViewController.swift */; };
 		21DFCA32213FFA70003E350C /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DFCA31213FFA70003E350C /* Member.swift */; };
+		21DFCA342141DCA5003E350C /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DFCA332141DCA5003E350C /* RoomDetailViewController.swift */; };
 		21F3274A20E6DEDB00F80B79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */; };
 		21F3274E210199B900F80B79 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274D210199B900F80B79 /* RoomsViewController.swift */; };
 		21F3275021019A7700F80B79 /* RoomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */; };
@@ -48,6 +49,7 @@
 		2151D50C210A7CD900DC1141 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		218A252021126D6A00EEA502 /* JoinChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChatViewController.swift; sourceTree = "<group>"; };
 		21DFCA31213FFA70003E350C /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		21DFCA332141DCA5003E350C /* RoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; };
 		21F3274920E6DEDA00F80B79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21F3274D210199B900F80B79 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		21F3274F21019A7700F80B79 /* RoomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				218A252021126D6A00EEA502 /* JoinChatViewController.swift */,
 				A251C4872120549800F7FE52 /* TabBarController.swift */,
 				21411F8720BDFFF800D9A780 /* Main.storyboard */,
+				21DFCA332141DCA5003E350C /* RoomDetailViewController.swift */,
 				A2869B1821318C7F00E5E79E /* CircleImageView.swift */,
 				21411F8A20BE000B00D9A780 /* Assets.xcassets */,
 				21411F8C20BE000B00D9A780 /* LaunchScreen.storyboard */,
@@ -287,6 +290,7 @@
 				2100890920C9E93C0016A49C /* CreateRoomViewController.swift in Sources */,
 				2151D50B21073BED00DC1141 /* LoginUserPost.swift in Sources */,
 				2100890B20CA99650016A49C /* TopViewController.swift in Sources */,
+				21DFCA342141DCA5003E350C /* RoomDetailViewController.swift in Sources */,
 				2151D50D210A7CD900DC1141 /* ProfileEditViewController.swift in Sources */,
 				218A252121126D6A00EEA502 /* JoinChatViewController.swift in Sources */,
 				2100890F20CB9DE40016A49C /* ChatViewController.swift in Sources */,

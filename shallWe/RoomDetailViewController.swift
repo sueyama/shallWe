@@ -1,5 +1,5 @@
 //
-//  JoinChatViewController.swift
+//  RoomDetailViewController.swift
 //  shallWe
 //
 //  Created by 上山　俊佑 on 2018/08/02.
@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 import SDWebImage
 
-class JoinChatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     //LoginViewControllerからパラメーターを取得する
     var uid = Auth.auth().currentUser?.uid
-
+    
     var roomName = String()
     var roomID = String()
     var pathToImage = String()
@@ -24,16 +24,16 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var userImage: String!
 
-    //ルーム情報のパラメータ
     @IBOutlet var RoomImage: UIImageView!
     @IBOutlet var RoomName: UILabel!
     @IBOutlet var RoomDetail: UILabel!
     @IBOutlet var RoomAddmitNum: UILabel!
-    
+
     @IBOutlet var ownerImage: UIImageView!
     @IBOutlet var ownerName: UILabel!
-    
+
     @IBOutlet var memberCollection: UICollectionView!
+    
     var member_posts = [Member]()
     var member_posst = Member()
     
@@ -42,19 +42,19 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setRoomInfo()
         getOwnerInfo()
         getMemberInfo()
         getUserInfo()
     }
-
+    
     func setRoomInfo(){
         //roomImageのUrl作成
         let roomImageUrl = URL(string:self.pathToImage as String)!
         //Cashをとっている
         self.RoomImage.sd_setImage(with: roomImageUrl, completed: nil)
-
+        
         self.RoomName.text = self.roomName
         self.RoomDetail.text = self.roomDetail
         self.RoomAddmitNum.text = self.roomAddmitNum
@@ -82,7 +82,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         })
     }
-
+    
     //メンバールームのデータ取得メソッド
     func getMemberInfo(){
         
@@ -112,7 +112,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         })
         
     }
-
+    
     //メンバールームのデータ取得メソッド
     func getUserInfo(){
         
@@ -147,7 +147,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         })
         
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.member_posts.count
@@ -166,14 +166,14 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         roomImageView.sd_setImage(with: roomImageUrl, completed: nil)
         
         return cell
-
+        
     }
-
-
+    
+    
     @IBAction func joinButton(_ sender: Any) {
         joinRoom()
     }
-
+    
     func joinRoom(){
         //FireBaseのDatabaseを宣言
         let ref = Database.database().reference()
@@ -183,7 +183,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         //feedの中に、キー値と値のマップを入れている
         //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
         let feed = ["roomID":self.roomID,"roomImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"userImage":self.userImage,"userID":self.uid!] as [String:Any]
-                    
+        
         //feedにkey値を付ける
         let postFeed = ["\(key)":feed]
         //DatabaseのRoomsの下にすべて入れる
@@ -194,7 +194,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.performSegue(withIdentifier: "privateChat", sender: nil)
         
     }
-
+    
     override func prepare(for segue:UIStoryboardSegue,sender:Any?){
         
         if(segue.identifier == "joinChat"){
@@ -208,20 +208,20 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
             privateChatVC.pathToImage = self.pathToImage
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

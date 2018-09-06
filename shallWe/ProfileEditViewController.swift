@@ -33,7 +33,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
 
     //TopViewControllerからパラメーターを取得する
     var uid = Auth.auth().currentUser?.uid
-    var profileImage:NSURL!
+    var profileImage = String();
 
     var userInfo = [LoginUserPost]()
     var userInfoMap = LoginUserPost()
@@ -101,13 +101,14 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
                     // ,で区切ってpathToImage,userID,userName・・・取得
                     if let pathToImage = userInfo["pathToImage"] as? String,
                         let userName = userInfo["userName"] as? String,
-                        let profileDetail = userInfo["profileDetail"] as? String
+                        let profileDetail = userInfo["profileDetail"] as? String, let postID = userInfo["postID"] as? String
                     {
                         //posstの中に入れていく
                         self.userInfoMap.pathToImage = pathToImage
                         self.userInfoMap.userID = userID
                         self.userInfoMap.userName = userName
                         self.userInfoMap.profileDetail = profileDetail
+                        self.userInfoMap.postID = postID
                         
                         if (self.userInfoMap.userID == self.uid)
                         {
@@ -183,7 +184,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 
         //プロフィールの写真に設置する
-        self.topLoginUserImage = info[UIImagePickerControllerOriginalImage] as? UIImageView
+        self.topLoginUserImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         //カメラ画面(アルバム画面)を閉じる処理
         picker.dismiss(animated: true, completion: nil)
     }
@@ -205,9 +206,13 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         let key = ref.child("Users").childByAutoId().key
         let imageRef = storage.child("Users").child(uid!).child("\(key).png")
         
-        self.data = UIImageJPEGRepresentation(UIImage(named: "background.png")!, 0.6)!
+        var imageData:NSData = NSData()
         
-        let uploadTask = imageRef.putData(self.data, metadata: nil) { (metaData, error) in
+        if let image = self.topLoginUserImage.image{
+            imageData = UIImageJPEGRepresentation(image, 0.5)! as NSData
+        }
+
+        let uploadTask = imageRef.putData(imageData as Data, metadata: nil) { (metaData, error) in
             
             if error != nil {
                 
@@ -219,10 +224,10 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
                 if url != nil {
                     //feedの中に、キー値と値のマップを入れている
                     //userId,profileImage,postId,住所全体,
-                    let feed = ["userID":self.uid!,"pathToImage":self.topLoginUserImage!,"userName":self.topLoginUserName,"profileDetail":self.topLoginProfileDetail] as [String:Any]
+                    let feed = ["userID":self.uid!,"pathToImage":url?.absoluteString,"userName":self.topLoginUserName.text,"profileDetail":self.topLoginProfileDetail.text] as [String:Any]
                     
                     //feedにkey値を付ける
-                    let postFeed = ["\(key)":feed]
+                    let postFeed = [self.userInfoMap.postID:feed]
                     //DatabaseのRoomsの下にすべて入れる
                     ref.child("Users").updateChildValues(postFeed)
                     //indicatorを止める
