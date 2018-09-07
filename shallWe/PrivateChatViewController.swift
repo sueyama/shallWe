@@ -14,6 +14,8 @@ class PrivateChatViewController: JSQMessagesViewController {
 
     var roomName:String!
     var roomID:String!
+    var roomAddmitNum:String!
+    var roomDetail:String!
     var pathToImage:String!
     var backGroundImage:UIImage = UIImage()
 
@@ -211,7 +213,30 @@ class PrivateChatViewController: JSQMessagesViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func roomDetailButton(_ sender: Any) {
+        //画面遷移
+        self.performSegue(withIdentifier: "roomDetail", sender: nil)
+    }
+    override func prepare(for segue:UIStoryboardSegue,sender:Any?){
+        
+        let roomDetailVC = segue.destination as! RoomDetailViewController
+        
+        //RoomIDを渡したい
+        roomDetailVC.roomID = self.roomID
+        //RoomNameを渡したい
+        roomDetailVC.roomName = self.roomName
+        //PathToImageを渡したい profile画像用URL
+        roomDetailVC.pathToImage = self.pathToImage
+        //roomAddmitNumを渡したい 募集人数
+        roomDetailVC.roomAddmitNum = self.roomAddmitNum
+        //roomDetailを渡したい ルーム詳細
+        roomDetailVC.roomDetail = self.roomDetail
+        //roomDetailを渡したい ルーム詳細
+        roomDetailVC.ownerUserID = self.uid!
+        
+    }
 
+    
     /*
     // MARK: - Navigation
 

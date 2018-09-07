@@ -209,6 +209,12 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             privateChatVC.roomName = self.posst.roomName
             //PathToImageを渡したい profile画像用URL
             privateChatVC.pathToImage = self.posst.pathToImage
+            //roomAddmitNumを渡したい
+            privateChatVC.roomAddmitNum = self.posst.roomAddmitNum
+            //roomDetailを渡したい
+            privateChatVC.roomDetail = self.posst.roomDetail
+
+
         }
         
         if(segue.identifier == "profileEdit"){

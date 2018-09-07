@@ -206,6 +206,11 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
             privateChatVC.roomName = self.roomName
             //PathToImageを渡したい profile画像用URL
             privateChatVC.pathToImage = self.pathToImage
+            //roomAddmitNumを渡したい
+            privateChatVC.roomAddmitNum = self.roomAddmitNum
+            //roomDetailを渡したい
+            privateChatVC.roomDetail = self.roomDetail
+
         }
     }
 
