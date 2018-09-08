@@ -11,24 +11,30 @@ import Firebase
 import SDWebImage
 
 class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-    //LoginViewControllerからパラメーターを取得する
-    var uid = Auth.auth().currentUser?.uid
-    var profileImage:NSURL!
     
     //ログインユーザの情報のパラメータ
     @IBOutlet var topLoginUserImage: UIImageView!
     @IBOutlet var topLoginUserName: UILabel!
-    
-    //比べる用
-    var address:String = String()
-
-    var owner_posts = [Post]()
-    var member_posts = [Post]()
-
     var userInfo = [LoginUserPost]()
     @IBOutlet var ownerRoomTableView: UITableView!
     @IBOutlet var memberRoomTableView: UITableView!
 
+    @IBAction func profileEdit(_ sender: Any) {
+        //let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "profileEdit")
+        //present(nextVC!,animated:true,completion: nil)
+        //画面遷移
+        performSegue(withIdentifier: "profileEdit", sender: nil)
+    }
+    //LoginViewControllerからパラメーターを取得する
+    var uid = Auth.auth().currentUser?.uid
+    var profileImage:NSURL!
+
+    //比べる用
+    var address:String = String()
+    
+    var owner_posts = [Post]()
+    var member_posts = [Post]()
+    
     //住所　近い順
     var country_Array = [String]()
     var administrativeArea_Array = [String]()
@@ -46,6 +52,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         // delegateを設定する
         ownerRoomTableView.dataSource = self
         ownerRoomTableView.delegate = self
@@ -315,13 +322,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     }
     
     
-    @IBAction func profileEdit(_ sender: Any) {
-        //let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "profileEdit")
-        //present(nextVC!,animated:true,completion: nil)
-        //画面遷移
-        performSegue(withIdentifier: "profileEdit", sender: nil)
-    }
-     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

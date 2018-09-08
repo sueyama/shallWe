@@ -33,7 +33,13 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet var ownerName: UILabel!
 
     @IBOutlet var memberCollection: UICollectionView!
-    
+
+    @IBOutlet weak var statusBar: UILabel!
+    @IBOutlet weak var closeButton: UIBarButtonItem!
+
+    @IBAction func closeButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     var member_posts = [Member]()
     var member_posst = Member()
     
@@ -42,6 +48,7 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        editUI()
         
         setRoomInfo()
         getOwnerInfo()
@@ -51,7 +58,7 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func setRoomInfo(){
         //roomImageのUrl作成
-        let roomImageUrl = URL(string:self.pathToImage as String)!
+        let roomImageUrl = URL(string:self.pathToImage as String)
         //Cashをとっている
         self.RoomImage.sd_setImage(with: roomImageUrl, completed: nil)
         
@@ -213,7 +220,11 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         super.didReceiveMemoryWarning()
     }
     
-    
+    func editUI(){
+        //各種パーツの色設定
+        statusBar.backgroundColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        closeButton.tintColor = UIColor.white
+    }
     /*
      // MARK: - Navigation
      

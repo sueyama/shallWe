@@ -30,14 +30,24 @@ class PrivateChatViewController: JSQMessagesViewController {
     var iconImage = UIImage()
     var aitenoImage:String!
     var uid = Auth.auth().currentUser?.uid
+
+//
+//    @IBAction func roomDetailButton(_ sender: Any) {
+//        //画面遷移
+//        self.performSegue(withIdentifier: "roomDetail", sender: nil)
+//    }
+//
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //左から右へスワイプしたときのジェスチャーリコグナイザーをcollectionviewに追加
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(sender:)))
-        rightSwipe.direction = .right
-        view.addGestureRecognizer(rightSwipe)
+        prepareNabiBar()
+
+//        //左から右へスワイプしたときのジェスチャーリコグナイザーをcollectionviewに追加
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(sender:)))
+//        rightSwipe.direction = .right
+//        view.addGestureRecognizer(rightSwipe)
         
         //背景画像を設定する
         if let imageData = UserDefaults.standard.object(forKey: "backGroundImage")  {
@@ -54,53 +64,60 @@ class PrivateChatViewController: JSQMessagesViewController {
         backImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         
         self.view.insertSubview(backImageView, at: 0)
-        //chatViewから戻るボタンを生成する
-        let topView:UIView = UIView()
-        topView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-        topView.backgroundColor = UIColor.red
-        self.view.addSubview(topView)
-        
-        // ブラーエフェクトを生成（ここでエフェクトスタイルを指定する）
-        let blurEffect = UIBlurEffect(style: .dark)
-        // ブラーエフェクトからエフェクトビューを生成
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        // エフェクトビューのサイズを指定（オリジナル画像と同じサイズにする）
-        visualEffectView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
 
-        //ラベル生成
-        let label = UILabel()
-        //フレームのサイズを指定
-        label.frame = CGRect(x: 0, y: self.view.frame.size.height/2, width: self.view.frame.size.width, height: 100)
-        //ルームネームを代入して、visualEffectViewに入れる
-        label.text = roomName
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = UIColor.white
-        visualEffectView.contentView.addSubview(label)
-        self.collectionView.addSubview(visualEffectView)
-        //２秒後に実行するメソッド
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            // ブラービューを消す
-            visualEffectView.removeFromSuperview()
-        }
+//        //chatViewから戻るボタンを生成する
+//        let topView:UIView = UIView()
+//        topView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+//        topView.backgroundColor = UIColor.red
+//        self.view.addSubview(topView)
+        
+//        // ブラーエフェクトを生成（ここでエフェクトスタイルを指定する）
+//        let blurEffect = UIBlurEffect(style: .dark)
+//        // ブラーエフェクトからエフェクトビューを生成
+//        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+//        // エフェクトビューのサイズを指定（オリジナル画像と同じサイズにする）
+//        visualEffectView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+//
+//
+//        //ラベル生成
+//        let label = UILabel()
+//        //フレームのサイズを指定
+//        label.frame = CGRect(x: 0, y: self.view.frame.size.height/2, width: self.view.frame.size.width, height: 100)
+//        //ルームネームを代入して、visualEffectViewに入れる
+//        label.text = roomName
+//        label.textAlignment = .center
+//        label.font = UIFont.boldSystemFont(ofSize: 20)
+//        label.textColor = UIColor.white
+//        visualEffectView.contentView.addSubview(label)
+//        self.collectionView.addSubview(visualEffectView)
+//        //２秒後に実行するメソッド
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//            // ブラービューを消す
+//            visualEffectView.removeFromSuperview()
+//        }
         
         self.getInfo()
         self.chatStart()
     }
 
-    //スワイプしたときに呼ばれるメソッド
-    @objc final func didSwipe(sender: UISwipeGestureRecognizer) {
-        
-        if sender.direction == .right {
-            print("Right")
-            
-            self.dismiss(animated: true, completion: nil)
-        }
-        else if sender.direction == .left {
-            print("Left")
-        }
-    }
+//    //スワイプしたときに呼ばれるメソッド
+//    @objc final func didSwipe(sender: UISwipeGestureRecognizer) {
+//
+//        if sender.direction == .right {
+//            print("Right")
+//
+//            self.dismiss(animated: true, completion: nil)
+//        }
+//        else if sender.direction == .left {
+//            print("Left")
+//        }
+//    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     //メッセージの位置を決める
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -208,15 +225,6 @@ class PrivateChatViewController: JSQMessagesViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func roomDetailButton(_ sender: Any) {
-        //画面遷移
-        self.performSegue(withIdentifier: "roomDetail", sender: nil)
-    }
     override func prepare(for segue:UIStoryboardSegue,sender:Any?){
         
         let roomDetailVC = segue.destination as! RoomDetailViewController
@@ -235,16 +243,20 @@ class PrivateChatViewController: JSQMessagesViewController {
         roomDetailVC.ownerUserID = self.uid!
         
     }
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //NabigationBatの設定
+    func prepareNabiBar(){
+        // navigationvarの準備
+        self.navigationItem.title = roomName
+        let rightBarButtonItem :UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Info_Icon.png")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target:self, action: #selector(PrivateChatViewController.rightButtonTapped(_:)))
+        rightBarButtonItem.tintColor = UIColor.white
+        
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
     }
-    */
+    
+    @objc func rightButtonTapped(_ sender: UIBarButtonItem) {
+        let storyboard: UIStoryboard = self.storyboard!
+        let RoomDetailView = storyboard.instantiateViewController(withIdentifier: "RoomDetailView")
+        self.present(RoomDetailView, animated: true, completion: nil)
+    }
 
 }

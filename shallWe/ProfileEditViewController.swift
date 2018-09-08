@@ -19,7 +19,10 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var noImageArea: UIView!
     //保存ボタン
     @IBOutlet weak var saveButton: UIButton!
-
+    //閉じるボタン
+    @IBOutlet weak var closeButton: UIBarButtonItem!
+    @IBOutlet weak var statusBar: UIView!
+    
     //右上の閉じるボタン押下時の挙動
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -55,15 +58,14 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        editUI()
         self.topLoginUserName.delegate = self
         
+        editUI()
         //通知センターのオブジェクトを作成
         let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardChangeFrame(_:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
         notification.addObserver(self, selector: #selector(ProfileEditViewController.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-
 
     }
     //キーボード表示時の挙動
@@ -248,7 +250,9 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     }
     //見た目の設定
     func editUI(){
-        //保存ボタンの色設定
+        //各種パーツの色設定
+        statusBar.backgroundColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        closeButton.tintColor = UIColor.white
         saveButton.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
         saveButton.layer.borderWidth = 0 // 枠線の幅
         saveButton.layer.borderColor = UIColor.red.cgColor // 枠線の色

@@ -29,11 +29,24 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet var RoomName: UILabel!
     @IBOutlet var RoomDetail: UILabel!
     @IBOutlet var RoomAddmitNum: UILabel!
-    
+
     @IBOutlet var ownerImage: UIImageView!
     @IBOutlet var ownerName: UILabel!
     
     @IBOutlet var memberCollection: UICollectionView!
+    @IBOutlet weak var statusBar: UIView!
+    
+    @IBOutlet weak var closeButton: UIBarButtonItem!
+    @IBOutlet weak var joinButton: UIButton!
+    
+    @IBAction func joinButton(_ sender: Any) {
+        joinRoom()
+    }
+    //右上の閉じるボタン押下時の挙動
+    @IBAction func closeButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     var member_posts = [Member]()
     var member_posst = Member()
     
@@ -42,6 +55,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        editUI()
 
         setRoomInfo()
         getOwnerInfo()
@@ -170,9 +184,6 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 
 
-    @IBAction func joinButton(_ sender: Any) {
-        joinRoom()
-    }
 
     func joinRoom(){
         //FireBaseのDatabaseを宣言
@@ -217,16 +228,17 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+    //見た目の設定
+    func editUI(){
+        //各種パーツの色設定
+        statusBar.backgroundColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        closeButton.tintColor = UIColor.white
+        joinButton.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        joinButton.layer.borderWidth = 0 // 枠線の幅
+        joinButton.layer.borderColor = UIColor.red.cgColor // 枠線の色
+        joinButton.layer.cornerRadius = 18.0 // 角丸のサイズ
+        joinButton.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

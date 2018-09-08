@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     override init() {
         //ナビゲーションバーの色の設定
         UINavigationBar.appearance().barTintColor = UIColor(red: 16/255, green: 24/255, blue: 33/255, alpha: 1)
-        
+        UINavigationBar.appearance().tintColor = UIColor.white
         //ナビゲーションバーのタイトルテキストの色を設定
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 15)!]
         
