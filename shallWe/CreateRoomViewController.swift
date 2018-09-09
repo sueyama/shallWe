@@ -47,15 +47,15 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
-        originalFrame = roomDetail.frame
 
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         editUI()
+        //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
+        originalFrame = roomDetail.frame
+
         self.roomName.delegate = self
         self.roomAddmitNum.delegate = self
         //roomAddmitNumを数値入力のみにする

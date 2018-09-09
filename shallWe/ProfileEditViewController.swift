@@ -48,8 +48,6 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
-        originalFrame = topLoginProfileDetail.frame
 
         //ログインユーザのデータを引っ張ってくるメソッド呼び出し
         getLoginUserInfo()
@@ -59,7 +57,9 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.topLoginUserName.delegate = self
-        
+        //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
+        originalFrame = topLoginProfileDetail.frame
+
         editUI()
         //通知センターのオブジェクトを作成
         let notification = NotificationCenter.default
