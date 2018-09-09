@@ -50,6 +50,10 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         editUI()
         
+        // delegateを設定する
+        self.memberCollection.dataSource = self
+        self.memberCollection.delegate = self
+
         setRoomInfo()
         getOwnerInfo()
         getMemberInfo()
@@ -100,7 +104,7 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
                 let postsSnap = snap.value as! [String:AnyObject]
                 for (_,memberPost) in postsSnap{
                     //roomID取得
-                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomId"] as? String{
+                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String{
                         //Databaseのものと比較してオーナーユーザ情報を取得
                         //owner_posstの中に入れていく
                         self.member_posst.userID = userID
@@ -174,46 +178,6 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         
         return cell
         
-    }
-    
-    
-    @IBAction func joinButton(_ sender: Any) {
-        joinRoom()
-    }
-    
-    func joinRoom(){
-        //FireBaseのDatabaseを宣言
-        let ref = Database.database().reference()
-        let key = ref.child("Member").childByAutoId().key
-        
-        AppDelegate.instance().dismissActivityIndicator()
-        //feedの中に、キー値と値のマップを入れている
-        //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
-        let feed = ["roomID":self.roomID,"roomImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"userImage":self.userImage,"userID":self.uid!] as [String:Any]
-        
-        //feedにkey値を付ける
-        let postFeed = ["\(key)":feed]
-        //DatabaseのRoomsの下にすべて入れる
-        ref.child("Member").updateChildValues(postFeed)
-        //indicatorを止める
-        AppDelegate.instance().dismissActivityIndicator()
-        //画面遷移
-        self.performSegue(withIdentifier: "privateChat", sender: nil)
-        
-    }
-    
-    override func prepare(for segue:UIStoryboardSegue,sender:Any?){
-        
-        if(segue.identifier == "joinChat"){
-            let privateChatVC = segue.destination as! PrivateChatViewController
-            
-            //RoomIDを渡したい
-            privateChatVC.roomID = self.roomID
-            //RoomNameを渡したい
-            privateChatVC.roomName = self.roomName
-            //PathToImageを渡したい profile画像用URL
-            privateChatVC.pathToImage = self.pathToImage
-        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -255,8 +255,10 @@ class PrivateChatViewController: JSQMessagesViewController {
     
     @objc func rightButtonTapped(_ sender: UIBarButtonItem) {
         let storyboard: UIStoryboard = self.storyboard!
-        let RoomDetailView = storyboard.instantiateViewController(withIdentifier: "RoomDetailView")
-        self.present(RoomDetailView, animated: true, completion: nil)
+       // let RoomDetailView = storyboard.instantiateViewController(withIdentifier: "RoomDetailView")
+        //self.present(RoomDetailView, animated: true, completion: nil)
+        //画面遷移
+        self.performSegue(withIdentifier: "roomDetail", sender: nil)
     }
 
 }

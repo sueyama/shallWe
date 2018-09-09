@@ -161,11 +161,13 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         
         let ref = Database.database().reference()
         //Roomsの配下にあるデータを取得する
-        ref.child("Menber").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapC) in            if(snapC.exists()){
-                let postsSnap = snapC.value as! [String:AnyObject]
-                for (_,memberaaPost) in postsSnap{
+        ref.child("Member").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapC) in            if(snapC.exists()){
+                let postsSnapC = snapC.value as! [String:AnyObject]
+                for (_,memberaaPost) in postsSnapC{
                     //roomID取得
                     if let userID = memberaaPost["userID"] as? String{
+                        //owner_posst初期化
+                        self.member_posst = Post()
                         if(userID == self.uid){
                             // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
                             if  let roomID = memberaaPost["roomID"] as? String,
@@ -199,6 +201,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         }else if tableView.tag == 2 {
             posst = member_posst
         }
+        
         //画面遷移
         performSegue(withIdentifier: "privateChat", sender: tableView.tag)
         
@@ -215,7 +218,11 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //RoomNameを渡したい
             privateChatVC.roomName = self.posst.roomName
             //PathToImageを渡したい profile画像用URL
-            privateChatVC.pathToImage = self.posst.pathToImage
+            if sender as! Int == 1 {
+                privateChatVC.pathToImage = self.posst.pathToImage
+            }else if sender as! Int == 2 {
+                privateChatVC.pathToImage = self.posst.roomImage
+            }
             //roomAddmitNumを渡したい
             privateChatVC.roomAddmitNum = self.posst.roomAddmitNum
             //roomDetailを渡したい
@@ -273,7 +280,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //Tagに「7」を振っている
             let roomImageView = cell.contentView.viewWithTag(7) as! UIImageView
             //ownernameにタグを付ける
-            let roomImageUrl = URL(string:self.member_posts[indexPath.row].pathToImage as String)!
+            let roomImageUrl = URL(string:self.member_posts[indexPath.row].roomImage as String)!
             //Cashをとっている
             roomImageView.sd_setImage(with: roomImageUrl, completed: nil)
             

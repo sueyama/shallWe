@@ -57,6 +57,10 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewDidLoad()
         editUI()
 
+        // delegateを設定する
+        self.memberCollection.dataSource = self
+        self.memberCollection.delegate = self
+
         setRoomInfo()
         getOwnerInfo()
         getMemberInfo()
@@ -107,7 +111,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let postsSnap = snap.value as! [String:AnyObject]
                 for (_,memberPost) in postsSnap{
                     //roomID取得
-                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomId"] as? String{
+                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String{
                         //Databaseのものと比較してオーナーユーザ情報を取得
                         //owner_posstの中に入れていく
                         self.member_posst.userID = userID
@@ -162,6 +166,10 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // section数は１つ
+        return 1
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.member_posts.count
@@ -202,7 +210,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         //indicatorを止める
         AppDelegate.instance().dismissActivityIndicator()
         //画面遷移
-        self.performSegue(withIdentifier: "privateChat", sender: nil)
+        self.performSegue(withIdentifier: "joinChat", sender: nil)
         
     }
 
@@ -224,7 +232,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
