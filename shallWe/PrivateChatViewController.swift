@@ -178,7 +178,7 @@ class PrivateChatViewController: JSQMessagesViewController {
     //NabigationBatの設定
     func prepareNabiBar(){
         // navigationvarの準備
-        self.navigationItem.title = roomName
+        self.navigationItem.title = self.roomName
         let rightBarButtonItem :UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Info_Icon.png")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target:self, action: #selector(PrivateChatViewController.rightButtonTapped(_:)))
         rightBarButtonItem.tintColor = UIColor.white
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)

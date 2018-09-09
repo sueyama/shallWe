@@ -197,9 +197,9 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView.tag == 1 {
-            posst = owner_posst
+            self.posst = self.owner_posst
         }else if tableView.tag == 2 {
-            posst = member_posst
+            self.posst = self.member_posst
         }
         
         //画面遷移
