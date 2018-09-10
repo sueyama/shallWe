@@ -123,6 +123,8 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapB) in
             if(snapB.exists()){
                 let postsSnap = snapB.value as! [String:AnyObject]
+                //owner_posts初期化
+                self.owner_posts = [Post]()
                 for (_,ownerPost) in postsSnap{
                     //roomID取得
                     if let roomID = ownerPost["roomID"] as? String{
@@ -163,10 +165,12 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         //Roomsの配下にあるデータを取得する
         ref.child("Member").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapC) in            if(snapC.exists()){
                 let postsSnapC = snapC.value as! [String:AnyObject]
+                //member_posts初期化
+                self.member_posts = [Post]()
                 for (_,memberaaPost) in postsSnapC{
                     //roomID取得
                     if let userID = memberaaPost["userID"] as? String{
-                        //owner_posst初期化
+                        //member_posst初期化
                         self.member_posst = Post()
                         if(userID == self.uid){
                             // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得

@@ -229,7 +229,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
                     let feed = ["userID":self.uid!,"pathToImage":url?.absoluteString,"userName":self.topLoginUserName.text,"profileDetail":self.topLoginProfileDetail.text] as [String:Any]
                     
                     //feedにkey値を付ける
-                    let postFeed = [self.userInfoMap.postID:feed]
+                    let postFeed = [self.uid!:feed]
                     //DatabaseのRoomsの下にすべて入れる
                     ref.child("Users").updateChildValues(postFeed)
                     //indicatorを止める

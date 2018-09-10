@@ -102,7 +102,11 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         ref.child("Member").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
             if(snap.exists()){
                 let postsSnap = snap.value as! [String:AnyObject]
+                // member_postsの初期化
+                self.member_posts = [Member]()
                 for (_,memberPost) in postsSnap{
+                    // member_posstの初期化
+                    self.member_posst = Member()
                     //roomID取得
                     if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String{
                         //Databaseのものと比較してオーナーユーザ情報を取得

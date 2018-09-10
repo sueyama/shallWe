@@ -34,9 +34,12 @@ class PrivateChatViewController: JSQMessagesViewController {
     var aitenoImage:String!
     var uid = Auth.auth().currentUser?.uid
 
+    var userInfoMap = LoginUserPost()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getLoginUserInfo()
         self.prepareNabiBar()
         self.prepareBackground()
         self.getInfo()
@@ -46,6 +49,42 @@ class PrivateChatViewController: JSQMessagesViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    
+    //Postsの取得
+    func getLoginUserInfo(){
+        
+        let ref = Database.database().reference()
+        //Roomsの配下にあるデータを取得する
+        ref.child("Users").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
+            let postsSnap = snap.value as! [String:AnyObject]
+            for (_,userInfo) in postsSnap{
+                //userId取得
+                if let userID = userInfo["userID"] as? String{
+                    //post初期化
+                    self.userInfoMap = LoginUserPost()
+                    if let pathToImage = userInfo["pathToImage"] as? String{
+                        //posstの中に入れていく
+                        self.userInfoMap.pathToImage = pathToImage
+                        self.userInfoMap.userID = userID
+                        if (self.userInfoMap.userID == self.uid)
+                        {
+                            do {
+                                let data = try Data(contentsOf: URL(string: pathToImage)!)
+                                self.iconImage = UIImage(data: data)!
+                                
+                            }catch{
+                                self.iconImage = UIImage(named: "background.jpg")!
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+        })
     }
 
     //メッセージの位置を決める
@@ -109,8 +148,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         decodedImage = UIImage(named: "\(random).png")!
         
         let imageData2 :NSData = try! NSData(contentsOf: URL(string: self.pathToImage)!,options: NSData.ReadingOptions.mappedIfSafe)
-        //iconImage = UIImage(data:imageData2 as Data)!
-        iconImage = UIImage(named: "background.jpg")!
+
 
         //吹き出しの設定
         let bubbleFactory = JSQMessagesBubbleImageFactory()
@@ -120,7 +158,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         
         self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder:decodedImage, diameter: 64)
         
-        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: iconImage, diameter: 64)
+        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: self.iconImage, diameter: 64)
         //メッセージの配列の初期化
         self.messages = []
     }

@@ -74,10 +74,12 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         ref.child("Rooms").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
             if(snap.exists()){
                 let postsSnap = snap.value as! [String:AnyObject]
+                //posts初期化
+                self.posts = [Post]()
                 for (_,ownerPost) in postsSnap{
                     //roomID取得
                     if let roomID = ownerPost["roomID"] as? String{
-                        //owner_posst初期化
+                        //posst初期化
                         self.posst = Post()
                         // ,で区切ってpathToImage,roomName,roomID,roomDeteil,roomAddmitNum,ownerUserID・・・取得
                         if let pathToImage = ownerPost["pathToImage"] as? String,

@@ -29,7 +29,7 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
 
         // google サインインのボタン作成・大きさ設定など
         let googleButton = GIDSignInButton()
-        googleButton.frame = CGRect(x: 20, y: 250, width: self.view.frame.size.width-40, height: 60)
+        googleButton.frame = CGRect(x: 20, y: self.view.frame.size.height-30, width: self.view.frame.size.width-40, height: 60)
         view.addSubview(googleButton)
         // uiDelegate,delegate設定、クライアントIDの取得
         GIDSignIn.sharedInstance().uiDelegate = self
