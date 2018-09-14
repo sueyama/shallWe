@@ -46,16 +46,19 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     //テキストビューの表示領域
     var originalFrame:CGRect?
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        //ログインユーザのデータを引っ張ってくるメソッド呼び出し
-        getLoginUserInfo()
-        
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        //ログインユーザのデータを引っ張ってくるメソッド呼び出し
+//        getLoginUserInfo()
+//
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //ログインユーザのデータを引っ張ってくるメソッド呼び出し
+        getLoginUserInfo()
+
         self.topLoginUserName.delegate = self
         //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
         originalFrame = topLoginProfileDetail.frame

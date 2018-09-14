@@ -19,9 +19,13 @@ class PrivateChatViewController: JSQMessagesViewController {
     var roomID:String!
     var roomAddmitNum:String!
     var roomDetail:String!
-    var pathToImage:String!
     var backGroundImage:UIImage = UIImage()
-
+    var memberNum:String!
+    
+    var iconPath: [String] = []
+    
+    var pathToImage:String!
+    
     //吹き出しの部分の変数を定義
     var messages:[JSQMessage]! = [JSQMessage]()
     var incomingBubble: JSQMessagesBubbleImage!
@@ -46,44 +50,40 @@ class PrivateChatViewController: JSQMessagesViewController {
         self.chatStart()
 
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     
     //Postsの取得
     func getLoginUserInfo(){
         
         let ref = Database.database().reference()
+
         //Roomsの配下にあるデータを取得する
         ref.child("Users").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-            let postsSnap = snap.value as! [String:AnyObject]
-            for (_,userInfo) in postsSnap{
-                //userId取得
-                if let userID = userInfo["userID"] as? String{
-                    //post初期化
-                    self.userInfoMap = LoginUserPost()
-                    if let pathToImage = userInfo["pathToImage"] as? String{
-                        //posstの中に入れていく
-                        self.userInfoMap.pathToImage = pathToImage
-                        self.userInfoMap.userID = userID
-                        if (self.userInfoMap.userID == self.uid)
-                        {
-                            do {
-                                let data = try Data(contentsOf: URL(string: pathToImage)!)
-                                self.iconImage = UIImage(data: data)!
-                                
-                            }catch{
-                                self.iconImage = UIImage(named: "background.jpg")!
+            if(snap.exists()){
+                let postsSnap = snap.value as! [String:AnyObject]
+                for (_,userInfo) in postsSnap{
+                    //userId取得
+                    if let userID = userInfo["userID"] as? String{
+                        //post初期化
+                        self.userInfoMap = LoginUserPost()
+                        if let pathToImage = userInfo["pathToImage"] as? String{
+                            //posstの中に入れていく
+                            self.userInfoMap.pathToImage = pathToImage
+                            self.userInfoMap.userID = userID
+                            if (self.userInfoMap.userID == self.uid)
+                            {
+                                do {
+                                    let data = try Data(contentsOf: URL(string: self.userInfoMap.pathToImage)!)
+                                    self.iconImage = UIImage(data: data)!
+                                    self.pathToImage = self.userInfoMap.pathToImage
+                                }catch{
+                                    self.iconImage = UIImage(named: "background.jpg")!
+                                }
                             }
                         }
+                        
                     }
-                    
                 }
             }
-            
-            
         })
     }
 
@@ -123,8 +123,14 @@ class PrivateChatViewController: JSQMessagesViewController {
         
         let message = self.messages?[indexPath.row]
         if message?.senderId == senderId{
+            self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: self.iconImage, diameter: 64)
             return self.outgoingAvatar
         }else{
+            let url = URL(string: self.iconPath[indexPath.row])
+            let data = try? Data(contentsOf: url!)
+            let image = UIImage(data: data!)
+            self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder:image, diameter: 64)
+            
             return self.incomingAvatar
         }
     }
@@ -144,10 +150,10 @@ class PrivateChatViewController: JSQMessagesViewController {
         
         //0から4までの値を取得する
         let random = arc4random() % 5
-        print(random)
-        decodedImage = UIImage(named: "\(random).png")!
+        //print(random)
+        self.decodedImage = UIImage(named: "\(random).png")!
         
-        let imageData2 :NSData = try! NSData(contentsOf: URL(string: self.pathToImage)!,options: NSData.ReadingOptions.mappedIfSafe)
+        //let imageData2 :NSData = try! NSData(contentsOf: URL(string: self.pathToImage)!,options: NSData.ReadingOptions.mappedIfSafe)
 
 
         //吹き出しの設定
@@ -156,7 +162,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         self.incomingBubble = bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.white)
         self.outgoingBubble = bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0))
         
-        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder:decodedImage, diameter: 64)
+        //self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder:self.decodedImage, diameter: 64)
         
         self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: self.iconImage, diameter: 64)
         //メッセージの配列の初期化
@@ -167,7 +173,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         
         let rootRef = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/").child("message").child(self.roomID)
         let timestamp = Int(NSDate().timeIntervalSince1970)
-        let post:Dictionary<String,Any>? = ["from":senderId,"name":senderDisplayName,"text":text,"timestamp":timestamp,"profileImage":pathToImage]
+        let post:Dictionary<String,Any>? = ["from":senderId,"name":senderDisplayName,"text":text,"timestamp":timestamp,"profileImage":self.pathToImage]
         let postRef = rootRef.childByAutoId()
         postRef.setValue(post)
         self.inputToolbar.contentView.textView.text = ""
@@ -186,9 +192,10 @@ class PrivateChatViewController: JSQMessagesViewController {
                 let text = snapshotValue["text"] as! String
                 let senderId = snapshotValue["from"] as! String
                 let name = snapshotValue["name"] as! String
-                self.aitenoImage = snapshotValue["profileImage"] as! String
+                let icon = snapshotValue["profileImage"] as! String
                 let message = JSQMessage(senderId:senderId,displayName: name,text: text)
                 self.messages?.append(message!)
+                self.iconPath.append(icon)
                 self.finishReceivingMessage()
             }
         })
@@ -207,6 +214,8 @@ class PrivateChatViewController: JSQMessagesViewController {
         roomDetailVC.pathToImage = self.pathToImage
         //roomAddmitNumを渡したい 募集人数
         roomDetailVC.roomAddmitNum = self.roomAddmitNum
+        //memberNumを渡したい 募集人数
+        roomDetailVC.memberNum = self.memberNum
         //roomDetailを渡したい ルーム詳細
         roomDetailVC.roomDetail = self.roomDetail
         //roomDetailを渡したい ルーム詳細

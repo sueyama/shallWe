@@ -27,5 +27,7 @@ class Post: NSObject {
     var roomDetail:String!
     var roomAddmitNum:String!
     var ownerUserID:String!
+    var memberNum:String!
+    var key:String!
 
 }

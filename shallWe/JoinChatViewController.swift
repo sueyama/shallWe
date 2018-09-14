@@ -21,8 +21,11 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     var roomAddmitNum = String()
     var roomDetail = String()
     var ownerUserID = String()
+    var memberNum = String()
+    var roomKey = String()
     
     var userImage: String!
+    var userName = String()
 
     //ルーム情報のパラメータ
     @IBOutlet var RoomImage: UIImageView!
@@ -75,7 +78,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         self.RoomName.text = self.roomName
         self.RoomDetail.text = self.roomDetail
-        self.RoomAddmitNum.text = self.roomAddmitNum
+        self.RoomAddmitNum.text = self.memberNum + "/" + self.roomAddmitNum
     }
     
     //オーナールームのデータ取得メソッド
@@ -115,12 +118,13 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
                     // member_posstの初期化
                     self.member_posst = Member()
                     //roomID取得
-                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String{
+                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String, let userNAME = memberPost["roomName"] as? String{
                         //Databaseのものと比較してオーナーユーザ情報を取得
                         //owner_posstの中に入れていく
                         self.member_posst.userID = userID
                         self.member_posst.userImage = userImage
                         self.member_posst.roomId = roomId
+                        self.member_posst.userName = userNAME
                         
                         //Databaseのものと比較して住所が同じものだけを入れる
                         if (self.member_posst.roomId == self.roomID)
@@ -158,7 +162,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
                         {
                             //ログインユーザの情報設定
                             self.userImage = self.userInfoMap.pathToImage
-                            
+                            self.userName = self.userInfoMap.userName
                         }
                     }
                     
@@ -191,6 +195,11 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         //Cashをとっている
         roomImageView.sd_setImage(with: roomImageUrl, completed: nil)
         
+        //メンバーの名前
+        //Tagに「2」を振っている
+        let memberName = cell.contentView.viewWithTag(2) as! UILabel
+        memberName.text = self.member_posts[indexPath.row].userName
+
         return cell
 
     }
@@ -202,15 +211,26 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         let ref = Database.database().reference()
         let key = ref.child("Member").childByAutoId().key
         
+        self.memberNum = String(Int(self.memberNum)! + 1)
+        
         AppDelegate.instance().dismissActivityIndicator()
         //feedの中に、キー値と値のマップを入れている
         //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
-        let feed = ["roomID":self.roomID,"roomImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"userImage":self.userImage,"userID":self.uid!] as [String:Any]
+        let feed = ["roomID":self.roomID,"roomImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"memberNum":self.memberNum,"userImage":self.userImage,"userID":self.uid!,"userName":self.userName] as [String:Any]
                     
         //feedにkey値を付ける
         let postFeed = ["\(key)":feed]
-        //DatabaseのRoomsの下にすべて入れる
+        //DatabaseのMemberの下にすべて入れる
         ref.child("Member").updateChildValues(postFeed)
+
+        
+        let feed2 = ["roomID":self.roomID,"pathToImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"memberNum":self.memberNum,"ownerUserID":self.ownerUserID] as [String:Any]
+        
+        //feedにkey値を付ける
+        let postFeed2 = [roomKey:feed2]
+        //DatabaseのMemberの下にすべて入れる
+        ref.child("Rooms").updateChildValues(postFeed2)
+
         //indicatorを止める
         AppDelegate.instance().dismissActivityIndicator()
         //画面遷移
@@ -228,11 +248,13 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
             //RoomNameを渡したい
             privateChatVC.roomName = self.roomName
             //PathToImageを渡したい profile画像用URL
-            privateChatVC.pathToImage = self.pathToImage
+            //privateChatVC.pathToImage = self.pathToImage
             //roomAddmitNumを渡したい
             privateChatVC.roomAddmitNum = self.roomAddmitNum
             //roomDetailを渡したい
             privateChatVC.roomDetail = self.roomDetail
+            //memberNumを渡したい
+            privateChatVC.memberNum = self.memberNum
 
         }
     }

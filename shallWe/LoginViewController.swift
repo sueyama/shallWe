@@ -110,7 +110,7 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
         uploadTask.resume()
         //userId,postIdをkeyとしてpostimageをfeedという変数に設定
         let feed = ["userID":self.uid!,"pathToImage":self.profileImage.absoluteString,"postID":key,"userName":"未設定","profileDetail":"未設定"] as [String:Any]
-        let postFeed = ["\(key)":feed]
+        let postFeed = [self.uid!:feed]
         //Users以下のdatabaseのアップデートをする
         ref.child("Users").updateChildValues(postFeed)
         AppDelegate.instance().dismissActivityIndicator()

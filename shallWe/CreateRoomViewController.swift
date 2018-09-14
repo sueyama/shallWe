@@ -199,7 +199,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                 if url != nil {
                     //feedの中に、キー値と値のマップを入れている
                     //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
-                    let feed = ["roomID":key,"roomName":self.roomName.text,"roomDetail":self.roomDetail.text,"roomAddmitNum":self.roomAddmitNum.text,"pathToImage":url?.absoluteString,"ownerUserID":self.ownerUserID!] as [String:Any]
+                    let feed = ["roomID":key,"roomName":self.roomName.text,"roomDetail":self.roomDetail.text,"roomAddmitNum":self.roomAddmitNum.text,"memberNum":"0","pathToImage":url?.absoluteString,"ownerUserID":self.ownerUserID!] as [String:Any]
         
                     //feedにkey値を付ける
                     let postFeed = ["\(key)":feed]

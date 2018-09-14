@@ -135,6 +135,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                             let roomName = ownerPost["roomName"] as? String,
                             let roomDetail = ownerPost["roomDetail"] as? String,
                             let roomAddmitNum = ownerPost["roomAddmitNum"] as? String,
+                            let memberNum = ownerPost["memberNum"] as? String,
                             let ownerUserID = ownerPost["ownerUserID"] as? String {
                             //owner_posstの中に入れていく
                             self.owner_posst.pathToImage = pathToImage
@@ -143,6 +144,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                             self.owner_posst.roomDetail = roomDetail
                             self.owner_posst.roomAddmitNum = roomAddmitNum
                             self.owner_posst.ownerUserID = ownerUserID
+                            self.owner_posst.memberNum = memberNum
                             
                             //Databaseのものと比較して住所が同じものだけを入れる
                             if (self.owner_posst.ownerUserID == self.uid)
@@ -178,6 +180,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                                 let roomImage = memberaaPost["roomImage"] as? String,
                                 let roomName = memberaaPost["roomName"] as? String,
                                 let roomDetail = memberaaPost["roomDetail"] as? String,
+                                let memberNum = memberaaPost["memberNum"] as? String,
                                 let roomAddmitNum = memberaaPost["roomAddmitNum"] as? String {
                                 //owner_posstの中に入れていく
                                 self.member_posst.roomImage = roomImage
@@ -185,6 +188,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                                 self.member_posst.roomName = roomName
                                 self.member_posst.roomDetail = roomDetail
                                 self.member_posst.roomAddmitNum = roomAddmitNum
+                                self.member_posst.memberNum = memberNum
                                 
                                 self.member_posts.append(self.member_posst)
                                 self.memberRoomTableView.reloadData()
@@ -221,16 +225,18 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             privateChatVC.roomID = self.posst.roomID
             //RoomNameを渡したい
             privateChatVC.roomName = self.posst.roomName
-            //PathToImageを渡したい profile画像用URL
-            if sender as! Int == 1 {
-                privateChatVC.pathToImage = self.posst.pathToImage
-            }else if sender as! Int == 2 {
-                privateChatVC.pathToImage = self.posst.roomImage
-            }
+//            //PathToImageを渡したい profile画像用URL
+//            if sender as! Int == 1 {
+//                privateChatVC.pathToImage = self.posst.pathToImage
+//            }else if sender as! Int == 2 {
+//                privateChatVC.pathToImage = self.posst.roomImage
+//            }
             //roomAddmitNumを渡したい
             privateChatVC.roomAddmitNum = self.posst.roomAddmitNum
             //roomDetailを渡したい
             privateChatVC.roomDetail = self.posst.roomDetail
+            //memberNumを渡したい
+            privateChatVC.memberNum = self.posst.memberNum
 
 
         }
@@ -272,8 +278,9 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //ルーム人数
             //Tagに「6」を振っている
             let roomAddmitNumLabel = cell.contentView.viewWithTag(6) as! UILabel
-            roomAddmitNumLabel.text = self.owner_posts[indexPath.row].roomAddmitNum
-            
+            roomAddmitNumLabel.text = self.owner_posts[indexPath.row].memberNum + "/" + self.owner_posts[indexPath.row].roomAddmitNum
+
+
             return cell
             
         }else if tableView.tag == 2{
@@ -301,7 +308,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //ルーム人数
             //Tagに「10」を振っている
             let roomAddmitNumLabel = cell.contentView.viewWithTag(10) as! UILabel
-            roomAddmitNumLabel.text = self.member_posts[indexPath.row].roomAddmitNum
+            roomAddmitNumLabel.text = self.member_posts[indexPath.row].memberNum + "/" + self.member_posts[indexPath.row].roomAddmitNum
             
             return cell
 

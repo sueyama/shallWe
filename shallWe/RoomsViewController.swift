@@ -86,6 +86,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
                             let roomName = ownerPost["roomName"] as? String,
                             let roomDetail = ownerPost["roomDetail"] as? String,
                             let roomAddmitNum = ownerPost["roomAddmitNum"] as? String,
+                            let memberNum = ownerPost["memberNum"] as? String,
                             let ownerUserID = ownerPost["ownerUserID"] as? String {
                             //posstの中に入れていく
                             self.posst.pathToImage = pathToImage
@@ -94,6 +95,8 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
                             self.posst.roomDetail = roomDetail
                             self.posst.roomAddmitNum = roomAddmitNum
                             self.posst.ownerUserID = ownerUserID
+                            self.posst.memberNum = memberNum
+                            self.posst.key = snap.key
                             
                             //Databaseのものと比較して住所が同じものだけを入れる
                             if (self.searchBar.text == ""){
@@ -135,6 +138,10 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         joinChatVC.roomDetail = self.posst.roomDetail
         //roomDetailを渡したい ルーム詳細
         joinChatVC.ownerUserID = self.posst.ownerUserID
+        //memberNumを渡したい メンバー人数
+        joinChatVC.memberNum = self.posst.memberNum
+        //memberNumを渡したい メンバー人数
+        joinChatVC.roomKey = self.posst.key
 
     }
     
@@ -164,7 +171,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         //ルーム人数
         //Tagに「4」を振っている
         let roomAddmitNumLabel = cell.contentView.viewWithTag(4) as! UILabel
-        roomAddmitNumLabel.text = self.posts[indexPath.row].roomAddmitNum
+        roomAddmitNumLabel.text = self.posts[indexPath.row].memberNum + "/" +  self.posts[indexPath.row].roomAddmitNum
         
         return cell
     }

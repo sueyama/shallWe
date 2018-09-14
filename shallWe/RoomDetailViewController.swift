@@ -19,11 +19,13 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     var roomID = String()
     var pathToImage = String()
     var roomAddmitNum = String()
+    var memberNum = String()
     var roomDetail = String()
     var ownerUserID = String()
     
     var userImage: String!
-
+    var userName = String()
+    
     @IBOutlet var RoomImage: UIImageView!
     @IBOutlet var RoomName: UILabel!
     @IBOutlet var RoomDetail: UILabel!
@@ -68,7 +70,7 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         
         self.RoomName.text = self.roomName
         self.RoomDetail.text = self.roomDetail
-        self.RoomAddmitNum.text = self.roomAddmitNum
+        self.RoomAddmitNum.text = self.memberNum + "/" + self.roomAddmitNum
     }
     
     //オーナールームのデータ取得メソッド
@@ -108,12 +110,13 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
                     // member_posstの初期化
                     self.member_posst = Member()
                     //roomID取得
-                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String{
+                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String, let userNAME = memberPost["userName"] as? String{
                         //Databaseのものと比較してオーナーユーザ情報を取得
                         //owner_posstの中に入れていく
                         self.member_posst.userID = userID
                         self.member_posst.userImage = userImage
                         self.member_posst.roomId = roomId
+                        self.member_posst.userName = userNAME
                         
                         //Databaseのものと比較して住所が同じものだけを入れる
                         if (self.member_posst.roomId == self.roomID)
@@ -180,6 +183,11 @@ class RoomDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         //Cashをとっている
         roomImageView.sd_setImage(with: roomImageUrl, completed: nil)
         
+        //メンバーの名前
+        //Tagに「2」を振っている
+        let memberName = cell.contentView.viewWithTag(2) as! UILabel
+        memberName.text = self.member_posts[indexPath.row].userName
+
         return cell
         
     }
