@@ -328,6 +328,7 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="OtL-Ip-LZB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Aqr-bL-yxq"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -436,37 +437,37 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nq4-Sq-W6A">
-                                        <rect key="frame" x="8" y="8" width="304" height="226"/>
+                                        <rect key="frame" x="8" y="8" width="304" height="228"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="eHu-cq-Ocl">
-                                            <size key="itemSize" width="50" height="50"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="8" id="eHu-cq-Ocl">
+                                            <size key="itemSize" width="64" height="66"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell1" id="jf0-Np-Qt0">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="66"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="66"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="LaR-Q2-p0d" customClass="CircleImageView" customModule="shallWe" customModuleProvider="target">
-                                                            <rect key="frame" x="5" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-6S-HYF">
-                                                            <rect key="frame" x="0.0" y="47" width="60" height="13"/>
+                                                            <rect key="frame" x="2" y="53" width="60" height="13"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="LaR-Q2-p0d" customClass="CircleImageView" customModule="shallWe" customModuleProvider="target">
+                                                            <rect key="frame" x="6" y="0.0" width="52" height="52"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                     </subviews>
                                                 </view>
-                                                <size key="customSize" width="60" height="60"/>
+                                                <size key="customSize" width="64" height="66"/>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -481,7 +482,7 @@
                                 <connections>
                                     <action selector="joinButton:" destination="qVC-Ls-qfv" eventType="touchUpInside" id="6YP-5m-BZ0"/>
                                     <action selector="profileHzn:" destination="K2c-wp-SMs" eventType="touchUpInside" id="IOE-Dr-xIy"/>
-                                    <segue destination="2e3-OG-YNV" kind="presentation" identifier="joinChat" id="82X-wC-Mqm"/>
+                                    <segue destination="2e3-OG-YNV" kind="show" identifier="joinChat" id="tX7-Df-r4D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -613,25 +614,25 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YCO-Dj-Vpe">
-                                                    <size key="itemSize" width="45" height="45"/>
+                                                    <size key="itemSize" width="64" height="66"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="Cell1" id="M6Y-cs-N2Y">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="66"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="66"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="5wz-1r-VQM" customClass="CircleImageView" customModule="shallWe" customModuleProvider="target">
-                                                                    <rect key="frame" x="5" y="0.0" width="50" height="50"/>
+                                                                    <rect key="frame" x="6" y="0.0" width="52" height="52"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyH-hj-0IF">
-                                                                    <rect key="frame" x="0.0" y="47" width="60" height="13"/>
+                                                                    <rect key="frame" x="2" y="53" width="60" height="13"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
                                                                     <nil key="textColor"/>
@@ -639,7 +640,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </view>
-                                                        <size key="customSize" width="60" height="60"/>
+                                                        <size key="customSize" width="64" height="66"/>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -654,6 +655,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Wrk-2k-eKa"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="RoomAddmitNum" destination="eyY-RK-0or" id="8pj-Fq-Tba"/>
                         <outlet property="RoomDetail" destination="aU1-Nf-LMb" id="qk8-Gt-Tky"/>
@@ -967,6 +969,6 @@
         <image name="backgroundTop" width="1348" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="82X-wC-Mqm"/>
+        <segue reference="tX7-Df-r4D"/>
     </inferredMetricsTieBreakers>
 </document>

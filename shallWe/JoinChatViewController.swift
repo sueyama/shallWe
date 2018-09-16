@@ -233,9 +233,8 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         //indicatorを止める
         AppDelegate.instance().dismissActivityIndicator()
-        //画面遷移
-        self.performSegue(withIdentifier: "joinChat", sender: nil)
         
+        //self.performSegue(withIdentifier: "joinChat", sender: nil)
     }
 
     override func prepare(for segue:UIStoryboardSegue,sender:Any?){

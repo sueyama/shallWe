@@ -222,7 +222,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         roomDetailVC.ownerUserID = self.uid!
         
     }
-    //NabigationBatの設定
+    //NabigationBarの設定
     func prepareNabiBar(){
         // navigationvarの準備
         self.navigationItem.title = self.roomName
