@@ -49,6 +49,16 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     var member_posst = Post()
     var posst = Post()
 
+    // 遷移用の格納変数
+    var seni_roomID = String()
+    var seni_roomName = String()
+    var seni_pathToImage = String()
+    var seni_roomAddmitNum = String()
+    var seni_roomDetail = String()
+    var seni_ownerUserID = String()
+    var seni_memberNum = String()
+    var seni_roomKey = String()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,9 +215,27 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView.tag == 1 {
-            self.posst = self.owner_posst
+
+            self.seni_roomID = self.owner_posts[indexPath.row].roomID
+            self.seni_roomName = self.owner_posts[indexPath.row].roomName
+            self.seni_pathToImage = self.owner_posts[indexPath.row].pathToImage
+            self.seni_roomAddmitNum = self.owner_posts[indexPath.row].roomAddmitNum
+            self.seni_roomDetail = self.owner_posts[indexPath.row].roomDetail
+            self.seni_ownerUserID = self.owner_posts[indexPath.row].ownerUserID
+            self.seni_memberNum = self.owner_posts[indexPath.row].memberNum
+            //self.seni_roomKey = self.owner_posts[indexPath.row].key
+
         }else if tableView.tag == 2 {
-            self.posst = self.member_posst
+            
+            self.seni_roomID = self.member_posts[indexPath.row].roomID
+            self.seni_roomName = self.member_posts[indexPath.row].roomName
+            self.seni_pathToImage = self.member_posts[indexPath.row].pathToImage
+            self.seni_roomAddmitNum = self.member_posts[indexPath.row].roomAddmitNum
+            self.seni_roomDetail = self.member_posts[indexPath.row].roomDetail
+            self.seni_ownerUserID = self.member_posts[indexPath.row].ownerUserID
+            self.seni_memberNum = self.member_posts[indexPath.row].memberNum
+            self.seni_roomKey = self.member_posts[indexPath.row].key
+
         }
         
         //画面遷移
@@ -222,21 +250,21 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             let privateChatVC = segue.destination as! PrivateChatViewController
 
             //RoomIDを渡したい
-            privateChatVC.roomID = self.posst.roomID
+            privateChatVC.roomID = self.seni_roomID
             //RoomNameを渡したい
-            privateChatVC.roomName = self.posst.roomName
-//            //PathToImageを渡したい profile画像用URL
-//            if sender as! Int == 1 {
-//                privateChatVC.pathToImage = self.posst.pathToImage
-//            }else if sender as! Int == 2 {
-//                privateChatVC.pathToImage = self.posst.roomImage
-//            }
+            privateChatVC.roomName = self.seni_roomName
+           //PathToImageを渡したい profile画像用URL
+            privateChatVC.pathToImage = self.seni_pathToImage
             //roomAddmitNumを渡したい
-            privateChatVC.roomAddmitNum = self.posst.roomAddmitNum
+            privateChatVC.roomAddmitNum = self.seni_roomAddmitNum
             //roomDetailを渡したい
-            privateChatVC.roomDetail = self.posst.roomDetail
+            privateChatVC.roomDetail = self.seni_roomDetail
             //memberNumを渡したい
-            privateChatVC.memberNum = self.posst.memberNum
+            privateChatVC.memberNum = self.seni_memberNum
+            //ownerUserIDを渡したい
+            //privateChatVC.ownerUserID = self.seni_ownerUserID
+            //keyを渡したい
+            //privateChatVC.key = self.seni_roomKey
 
 
         }

@@ -43,8 +43,8 @@ class PrivateChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.getLoginUserInfo()
         self.prepareNabiBar()
+        self.getLoginUserInfo()
         self.prepareBackground()
         self.getInfo()
         self.chatStart()
@@ -244,7 +244,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         
         let backImageView = UIImageView()
         backImageView.image = backGroundImage
-        backImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        backImageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         
         self.view.insertSubview(backImageView, at: 0)
     }

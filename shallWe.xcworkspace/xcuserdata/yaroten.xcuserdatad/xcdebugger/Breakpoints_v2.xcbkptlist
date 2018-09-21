@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.895551"
+            timestampString = "559178785.9041719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "5"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.8956521"
+            timestampString = "559178785.9048229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.895743"
+            timestampString = "559178785.905293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.8958009"
+            timestampString = "559178785.905665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.895875"
+            timestampString = "559178785.906016"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.895929"
+            timestampString = "559178785.906424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.895987"
+            timestampString = "559178785.906798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.896034"
+            timestampString = "559178785.9070441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -154,28 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/AppDelegate.swift"
-            timestampString = "552071490.336581"
+            timestampString = "557931009.54599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "AppDelegate"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "shallWe/AppDelegate.swift"
-            timestampString = "552071490.3366441"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "dismissActivityIndicator()"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,7 +170,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/AppDelegate.swift"
-            timestampString = "552071490.3367161"
+            timestampString = "557931009.546088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "showIndicator()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/AppDelegate.swift"
+            timestampString = "557931009.546169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/AppDelegate.swift"
-            timestampString = "552071490.336776"
+            timestampString = "557931009.546296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -218,12 +218,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/ProfileEditViewController.swift"
-            timestampString = "556245525.685798"
+            timestampString = "559178785.907359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "getLoginUserInfo()"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "keyboardChangeFrame(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173163.896271"
+            timestampString = "559178785.907413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/TopViewController.swift"
-            timestampString = "556245525.685905"
+            timestampString = "559178785.907662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173201.9150569"
+            timestampString = "559178785.907738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/LoginViewController.swift"
-            timestampString = "556173203.3414429"
+            timestampString = "559178785.907982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -298,12 +298,1294 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shallWe/TopViewController.swift"
-            timestampString = "556245525.685995"
+            timestampString = "559178785.908224"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908293"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.90836"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.9084229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/CreateRoomViewController.swift"
+            timestampString = "559178785.908489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "createRoom()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in shallWe.CreateRoomViewController.createRoom() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "557158996.528245"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__ObjC.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in shallWe.CreateRoomViewController.createRoom() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/CreateRoomViewController.swift"
+                  timestampString = "557158996.545875"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908603"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "getLoginUserInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.TopViewController.getOwnerRoomsInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/TopViewController.swift"
+                  timestampString = "557187088.062489"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in shallWe.TopViewController.getOwnerRoomsInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/TopViewController.swift"
+                  timestampString = "557187088.065999"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908666"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "getOwnerRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "getOwnerRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "getMemberRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.9089119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "getMemberRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.908972"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.9090329"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.909095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909156"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "getRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909214"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "getRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "getRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.909319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "TopViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909379"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "getRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909482"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "getRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909584"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.9096349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909686"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.90974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.909936"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.909989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.uid.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557854356.391804"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.uid.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557854356.3945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.JoinChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557854356.396919"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.JoinChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557854356.399773"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomsViewController.swift"
+            timestampString = "559178785.910072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.9101239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.userImage.getter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.686711"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.userImage.setter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.689068"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.JoinChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.6914411"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "1200">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.JoinChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.6938421"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "1164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.910207"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.RoomImage.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557855107.65447"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.RoomImage.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557855107.656813"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.JoinChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557855107.659146"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1324">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.JoinChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557855107.661236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.910291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.RoomAddmitNum.getter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.719278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.RoomAddmitNum.setter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.721586"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.JoinChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.723845"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1760">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.JoinChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.726401"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1724">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.910374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.memberCollection.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UICollectionView&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.735993"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.memberCollection.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UICollectionView&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.738602"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.JoinChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.740966"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "2044">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.JoinChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.743336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "2008">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.910457"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.member_posst.getter : shallWe.Member"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.7531559"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.member_posst.setter : shallWe.Member"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.755561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.JoinChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.758031"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2184">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.JoinChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.7612261"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.910539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "JoinChatViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.userInfoMap.getter : shallWe.LoginUserPost"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.771044"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.userInfoMap.setter : shallWe.LoginUserPost"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.7733819"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.JoinChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.776721"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "2356">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.JoinChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "557853467.780885"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "2320">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.910625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "joinButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.910719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "getMemberRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.910782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "getMemberRoomsInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.TopViewController.getMemberRoomsInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/TopViewController.swift"
+                  timestampString = "558143669.624045"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in shallWe.TopViewController.getMemberRoomsInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/TopViewController.swift"
+                  timestampString = "558143669.629721"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.910846"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "getMemberRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/TopViewController.swift"
+            timestampString = "559178785.910908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "getMemberRoomsInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.91097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.911052"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.JoinChatViewController.getMemberInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "558145153.95156"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in shallWe.JoinChatViewController.getMemberInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/JoinChatViewController.swift"
+                  timestampString = "558145153.956686"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.911145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
             endingLineNumber = "203"
-            landmarkName = "prepare(for:sender:)"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,13 +1595,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "shallWe/TopViewController.swift"
-            timestampString = "556245525.686047"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.9112329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "getMemberInfo()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,13 +1611,109 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "shallWe/TopViewController.swift"
-            timestampString = "556245525.686096"
+            filePath = "shallWe/RoomDetailViewController.swift"
+            timestampString = "559178785.911319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getOwnerInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.RoomDetailViewController.getOwnerInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/RoomDetailViewController.swift"
+                  timestampString = "558149538.707855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in shallWe.RoomDetailViewController.getOwnerInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/RoomDetailViewController.swift"
+                  timestampString = "558149538.710753"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomDetailViewController.swift"
+            timestampString = "559178785.911384"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.RoomDetailViewController.getMemberInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/RoomDetailViewController.swift"
+                  timestampString = "558149917.3160959"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in shallWe.RoomDetailViewController.getMemberInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/RoomDetailViewController.swift"
+                  timestampString = "558149917.31821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomDetailViewController.swift"
+            timestampString = "559178785.911443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "getMemberInfo()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -345,13 +1723,411 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "shallWe/TopViewController.swift"
-            timestampString = "556245525.686144"
+            filePath = "shallWe/RoomDetailViewController.swift"
+            timestampString = "559178785.911503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/RoomDetailViewController.swift"
+            timestampString = "559178785.911561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.911622"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.911696"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.911756"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.911816"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.911875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.911935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.PrivateChatViewController.getLoginUserInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/PrivateChatViewController.swift"
+                  timestampString = "558873048.582203"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in shallWe.PrivateChatViewController.getLoginUserInfo() -&gt; ()"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/PrivateChatViewController.swift"
+                  timestampString = "558873048.58436"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.911994"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.PrivateChatViewController.iconPath.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/PrivateChatViewController.swift"
+                  timestampString = "559044837.255267"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.PrivateChatViewController.iconPath.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/PrivateChatViewController.swift"
+                  timestampString = "559044837.259056"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.PrivateChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; shallWe.PrivateChatViewController"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/PrivateChatViewController.swift"
+                  timestampString = "559044837.27279"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "956">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "shallWe.PrivateChatViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;shallWe.PrivateChatViewController&gt;"
+                  moduleName = "shallWe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yaroten/Library/Mobile%20Documents/com~apple~CloudDocs/git/shallWe/shallWe/PrivateChatViewController.swift"
+                  timestampString = "559044837.2776279"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "912">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.9120851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/PrivateChatViewController.swift"
+            timestampString = "559178785.912146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912215"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
+            landmarkName = "setButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "setButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getOwnerInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912475"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912535"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "getOwnerInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912598"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "getMemberInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912716"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "getOwnerInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shallWe/JoinChatViewController.swift"
+            timestampString = "559178785.912773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "getMemberInfo()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

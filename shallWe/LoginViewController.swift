@@ -77,8 +77,12 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
             let imageUrl = signIn.currentUser.profile.imageURL(withDimension: 100)
             self.profileImage = imageUrl
 
-            //firebaseに飛ばす
-            self.postMyProfile()
+            if(!UserDefaults.standard.bool(forKey: "userData")){
+                //firebaseに飛ばす
+                self.postMyProfile()
+            }
+            //userDataに0をセットすることで次回開いたときにユーザ情報が更新されない
+            UserDefaults.standard.set(true, forKey: "userData")
             //nextに画面遷移
             self.performSegue(withIdentifier: "next", sender: nil)
             

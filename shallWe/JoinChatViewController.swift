@@ -26,6 +26,8 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var userImage: String!
     var userName = String()
+    
+    var buttonSwitch = false
 
     //ルーム情報のパラメータ
     @IBOutlet var RoomImage: UIImageView!
@@ -41,10 +43,16 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var joinButton: UIButton!
+
+    @IBOutlet var joinButtonUi: UIButton!
     
     @IBAction func joinButton(_ sender: Any) {
         joinRoom()
     }
+    @IBAction func seniButton(_ sender: Any) {
+        seniRoom()
+    }
+
     //右上の閉じるボタン押下時の挙動
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -97,6 +105,9 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
                             //ログインユーザの情報設定
                             self.ownerImage.sd_setImage(with: URL(string: pathToImage), completed: nil)
                             self.ownerName.text = userName
+                            if(self.ownerUserID == self.uid){
+                                self.buttonSwitch = true
+                            }
                         }
                     }
                 }
@@ -118,23 +129,27 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
                     // member_posstの初期化
                     self.member_posst = Member()
                     //roomID取得
-                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String, let userNAME = memberPost["roomName"] as? String{
+                    if let userID = memberPost["userID"] as? String, let userImage = memberPost["userImage"] as? String, let roomId = memberPost["roomID"] as? String, let userName = memberPost["userName"] as? String{
                         //Databaseのものと比較してオーナーユーザ情報を取得
                         //owner_posstの中に入れていく
                         self.member_posst.userID = userID
                         self.member_posst.userImage = userImage
                         self.member_posst.roomId = roomId
-                        self.member_posst.userName = userNAME
+                        self.member_posst.userName = userName
                         
                         //Databaseのものと比較して住所が同じものだけを入れる
                         if (self.member_posst.roomId == self.roomID)
                         {
                             self.member_posts.append(self.member_posst)
                             self.memberCollection.reloadData()
+                            if(self.member_posst.userID == self.uid){
+                                self.buttonSwitch = true
+                            }
                         }
                     }
                 }
             }
+            self.setButton()
         })
         
     }
@@ -238,6 +253,12 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
 
+    func seniRoom(){
+        //画面遷移
+        self.performSegue(withIdentifier: "joinChat", sender: nil)
+        
+    }
+
     override func prepare(for segue:UIStoryboardSegue,sender:Any?){
         
         if(segue.identifier == "joinChat"){
@@ -258,7 +279,49 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         }
     }
-    
+
+    func setButton(){
+        // UIButtonのインスタンスを作成する
+        let button = UIButton(type: UIButtonType.system)
+        
+        if(self.buttonSwitch){
+            // ボタンを押した時に実行するメソッドを指定
+            button.addTarget(self, action: #selector(seniButton(_:)), for: UIControlEvents.touchUpInside)
+            // ラベルを設定する
+            button.setTitle("ルームへ", for: UIControlState.normal)
+
+        }else{
+            // ボタンを押した時に実行するメソッドを指定
+            button.addTarget(self, action: #selector(joinButton(_:)), for: UIControlEvents.touchUpInside)
+            // ラベルを設定する
+            button.setTitle("参加", for: UIControlState.normal)
+
+        }
+        
+        // サイズを変更する
+        button.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
+        // 任意の場所に設置する
+        button.layer.position = CGPoint(x: self.view.frame.width/2, y:self.view.frame.height*5/6)
+        // 文字色を変える
+        button.setTitleColor(UIColor.white, for: UIControlState.normal)
+        // 背景色を変える
+        button.backgroundColor = UIColor(red: 0.3, green: 0.7, blue: 0.6, alpha: 1)
+        // 枠の太さを変える
+        button.layer.borderWidth = 1.0
+        // 枠の色を変える
+        button.layer.borderColor = UIColor(red: 0.3, green: 0.6, blue: 0.5, alpha: 1).cgColor
+        // 枠に丸みをつける
+        button.layer.cornerRadius = 25
+        // 影の濃さを決める
+        button.layer.shadowOpacity = 0.5
+        // 影のサイズを決める
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
+        // ボタンが押されたときの文字色
+        button.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        // viewに追加する
+        self.view.addSubview(button)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -267,11 +330,11 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         //各種パーツの色設定
         statusBar.backgroundColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
         closeButton.tintColor = UIColor.white
-        joinButton.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
-        joinButton.layer.borderWidth = 0 // 枠線の幅
-        joinButton.layer.borderColor = UIColor.red.cgColor // 枠線の色
-        joinButton.layer.cornerRadius = 18.0 // 角丸のサイズ
-        joinButton.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
+        //joinButton.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
+        //joinButton.layer.borderWidth = 0 // 枠線の幅
+        //joinButton.layer.borderColor = UIColor.red.cgColor // 枠線の色
+        //joinButton.layer.cornerRadius = 18.0 // 角丸のサイズ
+        //joinButton.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
 
     }
 

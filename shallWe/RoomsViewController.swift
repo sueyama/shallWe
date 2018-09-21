@@ -34,6 +34,16 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
     var thoroughfare_Array = [String]()
     var subThoroughfare_Array = [String]()
     
+    // 遷移用の格納変数
+    var seni_roomID = String()
+    var seni_roomName = String()
+    var seni_pathToImage = String()
+    var seni_roomAddmitNum = String()
+    var seni_roomDetail = String()
+    var seni_ownerUserID = String()
+    var seni_memberNum = String()
+    var seni_roomKey = String()
+    
     var posst = Post()
     
     override func viewDidLoad() {
@@ -116,6 +126,15 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        self.seni_roomID = self.posts[indexPath.row].roomID
+        self.seni_roomName = self.posts[indexPath.row].roomName
+        self.seni_pathToImage = self.posts[indexPath.row].pathToImage
+        self.seni_roomAddmitNum = self.posts[indexPath.row].roomAddmitNum
+        self.seni_roomDetail = self.posts[indexPath.row].roomDetail
+        self.seni_ownerUserID = self.posts[indexPath.row].ownerUserID
+        self.seni_memberNum = self.posts[indexPath.row].memberNum
+        self.seni_roomKey = self.posts[indexPath.row].key
+        
         //画面遷移
         performSegue(withIdentifier: "joinChat", sender: indexPath)
         
@@ -127,21 +146,21 @@ class RoomsViewController: UIViewController, UITableViewDelegate,UITableViewData
         let joinChatVC = segue.destination as! JoinChatViewController
         
         //RoomIDを渡したい
-        joinChatVC.roomID = self.posst.roomID
+        joinChatVC.roomID = self.seni_roomID
         //RoomNameを渡したい
-        joinChatVC.roomName = self.posst.roomName
+        joinChatVC.roomName = self.seni_roomName
         //PathToImageを渡したい profile画像用URL
-        joinChatVC.pathToImage = self.posst.pathToImage
+        joinChatVC.pathToImage = self.seni_pathToImage
         //roomAddmitNumを渡したい 募集人数
-        joinChatVC.roomAddmitNum = self.posst.roomAddmitNum
+        joinChatVC.roomAddmitNum = self.seni_roomAddmitNum
         //roomDetailを渡したい ルーム詳細
-        joinChatVC.roomDetail = self.posst.roomDetail
+        joinChatVC.roomDetail = self.seni_roomDetail
         //roomDetailを渡したい ルーム詳細
-        joinChatVC.ownerUserID = self.posst.ownerUserID
+        joinChatVC.ownerUserID = self.seni_ownerUserID
         //memberNumを渡したい メンバー人数
-        joinChatVC.memberNum = self.posst.memberNum
+        joinChatVC.memberNum = self.seni_memberNum
         //memberNumを渡したい メンバー人数
-        joinChatVC.roomKey = self.posst.key
+        joinChatVC.roomKey = self.seni_roomKey
 
     }
     
