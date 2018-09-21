@@ -247,6 +247,12 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                     AppDelegate.instance().dismissActivityIndicator()
                     //TOP画面へ遷移
                     print("ルームの作成が完了しました")
+                    // 入力値を初期化する
+                    self.roomName.text = nil
+                    self.roomDetail.text = nil
+                    self.roomAddmitNum.text = nil
+                    self.roomImage.image = nil
+
                     //TOPnのタブの
                     self.tabBarController?.selectedIndex = 0
                 }

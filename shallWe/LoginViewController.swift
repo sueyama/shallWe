@@ -77,10 +77,9 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
             let imageUrl = signIn.currentUser.profile.imageURL(withDimension: 100)
             self.profileImage = imageUrl
 
-            if(!UserDefaults.standard.bool(forKey: "userData")){
-                //firebaseに飛ばす
-                self.postMyProfile()
-            }
+            //firebaseに飛ばす
+            self.postMyProfile()
+
             //userDataに0をセットすることで次回開いたときにユーザ情報が更新されない
             UserDefaults.standard.set(true, forKey: "userData")
             //nextに画面遷移
@@ -115,8 +114,10 @@ class LoginViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegat
         //userId,postIdをkeyとしてpostimageをfeedという変数に設定
         let feed = ["userID":self.uid!,"pathToImage":self.profileImage.absoluteString,"postID":key,"userName":"未設定","profileDetail":"未設定"] as [String:Any]
         let postFeed = [self.uid!:feed]
-        //Users以下のdatabaseのアップデートをする
-        ref.child("Users").updateChildValues(postFeed)
+        if(!UserDefaults.standard.bool(forKey: "userData")){
+            //Users以下のdatabaseのアップデートをする
+            ref.child("Users").updateChildValues(postFeed)
+        }
         AppDelegate.instance().dismissActivityIndicator()
     }
     
