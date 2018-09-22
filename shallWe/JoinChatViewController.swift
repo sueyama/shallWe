@@ -42,7 +42,6 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var statusBar: UIView!
     
     @IBOutlet weak var closeButton: UIBarButtonItem!
-    @IBOutlet weak var joinButton: UIButton!
 
     @IBOutlet var joinButtonUi: UIButton!
     
@@ -301,25 +300,17 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         // サイズを変更する
-        button.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
+        button.frame = CGRect(x: 0, y: 0, width: 195, height: 35)
         // 任意の場所に設置する
         button.layer.position = CGPoint(x: self.view.frame.width/2, y:self.view.frame.height*5/6)
         // 文字色を変える
-        button.setTitleColor(UIColor.white, for: UIControlState.normal)
+        button.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal)
         // 背景色を変える
-        button.backgroundColor = UIColor(red: 0.3, green: 0.7, blue: 0.6, alpha: 1)
-        // 枠の太さを変える
-        button.layer.borderWidth = 1.0
-        // 枠の色を変える
-        button.layer.borderColor = UIColor(red: 0.3, green: 0.6, blue: 0.5, alpha: 1).cgColor
+        button.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0)
+        //フォントサイズを変える
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight:UIFont.Weight.bold)
         // 枠に丸みをつける
-        button.layer.cornerRadius = 25
-        // 影の濃さを決める
-        button.layer.shadowOpacity = 0.5
-        // 影のサイズを決める
-        button.layer.shadowOffset = CGSize(width: 2, height: 2)
-        // ボタンが押されたときの文字色
-        button.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        button.layer.cornerRadius = 18.0
         // viewに追加する
         self.view.addSubview(button)
     }
@@ -332,11 +323,6 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         //各種パーツの色設定
         statusBar.backgroundColor = UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
         closeButton.tintColor = UIColor.white
-        //joinButton.backgroundColor =  UIColor(red: 50/255, green: 58/255, blue: 67/255, alpha: 1.0) // dark black
-        //joinButton.layer.borderWidth = 0 // 枠線の幅
-        //joinButton.layer.borderColor = UIColor.red.cgColor // 枠線の色
-        //joinButton.layer.cornerRadius = 18.0 // 角丸のサイズ
-        //joinButton.setTitleColor(UIColor(red: 255/255, green: 233/255, blue: 51/255, alpha: 1.0),for: UIControlState.normal) // タイトルの色
 
     }
 
