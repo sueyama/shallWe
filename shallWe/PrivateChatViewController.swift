@@ -9,6 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 import Firebase
+import SVProgressHUD
 
 class PrivateChatViewController: JSQMessagesViewController {
 
@@ -44,6 +45,10 @@ class PrivateChatViewController: JSQMessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        //Indicatorを回す
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+        SVProgressHUD.show(withStatus: "検索中...")
+
         self.prepareNabiBar()
         self.getLoginUserInfo()
         self.prepareBackground()
@@ -176,12 +181,20 @@ class PrivateChatViewController: JSQMessagesViewController {
             return
         }
         
+        //Indicatorを回す
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+        SVProgressHUD.show(withStatus: "送信中...")
+
         let rootRef = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/").child("message").child(self.roomID)
         let timestamp = Int(NSDate().timeIntervalSince1970)
         let post:Dictionary<String,Any>? = ["from":senderId,"name":senderDisplayName,"text":text,"timestamp":timestamp,"profileImage":self.pathToImage]
         let postRef = rootRef.childByAutoId()
         postRef.setValue(post)
         self.inputToolbar.contentView.textView.text = ""
+        
+        //Indicatorを止める
+        SVProgressHUD.dismiss()
+
     }
     //メッセージをFirebaseから取ってくる
     func getInfo(){
@@ -202,6 +215,10 @@ class PrivateChatViewController: JSQMessagesViewController {
                 self.messages?.append(message!)
                 self.iconPath.append(icon)
                 self.finishReceivingMessage()
+                
+                //Indicatorを止める
+                SVProgressHUD.dismiss()
+
             }
         })
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
