@@ -229,7 +229,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             
             self.seni_roomID = self.member_posts[indexPath.row].roomID
             self.seni_roomName = self.member_posts[indexPath.row].roomName
-            self.seni_pathToImage = self.member_posts[indexPath.row].pathToImage
+            self.seni_pathToImage = self.member_posts[indexPath.row].roomImage
             self.seni_roomAddmitNum = self.member_posts[indexPath.row].roomAddmitNum
             self.seni_roomDetail = self.member_posts[indexPath.row].roomDetail
             self.seni_ownerUserID = self.member_posts[indexPath.row].ownerUserID

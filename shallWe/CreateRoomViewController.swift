@@ -262,7 +262,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                     self.roomImage.image = nil
 
 
-                    //TOPnのタブの
+                    //TOPのタブ
                     self.tabBarController?.selectedIndex = 0
                 }
                 

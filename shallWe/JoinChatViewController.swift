@@ -64,8 +64,8 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
     var userInfo = [LoginUserPost]()
     var userInfoMap = LoginUserPost()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         editUI()
 
         // delegateを設定する

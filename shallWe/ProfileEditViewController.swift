@@ -105,14 +105,13 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
                     // ,で区切ってpathToImage,userID,userName・・・取得
                     if let pathToImage = userInfo["pathToImage"] as? String,
                         let userName = userInfo["userName"] as? String,
-                        let profileDetail = userInfo["profileDetail"] as? String, let postID = userInfo["postID"] as? String
+                        let profileDetail = userInfo["profileDetail"] as? String
                     {
                         //posstの中に入れていく
                         self.userInfoMap.pathToImage = pathToImage
                         self.userInfoMap.userID = userID
                         self.userInfoMap.userName = userName
                         self.userInfoMap.profileDetail = profileDetail
-                        self.userInfoMap.postID = postID
                         
                         if (self.userInfoMap.userID == self.uid)
                         {
@@ -205,7 +204,36 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     func saveProfile(){
         // ログインボタンを押下不可に
         saveButton.isEnabled = false
-        
+
+        if(self.topLoginUserName.text == nil || self.topLoginUserName.text == ""){
+            // UIAlertControllerを生成
+            let alui = UIAlertController(title: "入力エラー", message: "名前を入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
+            // 選択肢としてContinueボタンを用意する
+            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            alui.addAction(btn)
+            present(alui, animated: true, completion: nil)
+            
+            return
+        }else if(self.topLoginProfileDetail.text == nil || self.topLoginProfileDetail.text == ""){
+            // UIAlertControllerを生成
+            let alui = UIAlertController(title: "入力エラー", message: "プロフィール詳細を入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
+            // 選択肢としてContinueボタンを用意する
+            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            alui.addAction(btn)
+            present(alui, animated: true, completion: nil)
+            
+            return
+        }else if(self.topLoginUserImage.image == nil){
+            // UIAlertControllerを生成
+            let alui = UIAlertController(title: "入力エラー", message: "プロフィールの画像を選択して下さい。", preferredStyle: UIAlertControllerStyle.alert)
+            // 選択肢としてContinueボタンを用意する
+            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            alui.addAction(btn)
+            present(alui, animated: true, completion: nil)
+            
+            return
+        }
+
         //FireBaseのDatabaseを宣言
         let ref = Database.database().reference()
         //StorageのURLを取得
