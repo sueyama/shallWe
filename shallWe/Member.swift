@@ -18,5 +18,6 @@ class Member: NSObject {
     var userID:String = String()
     var userImage:String = String()
     var userName:String = String()
+    var ownerUserID:String = String()
 
 }

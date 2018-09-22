@@ -231,7 +231,7 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         AppDelegate.instance().dismissActivityIndicator()
         //feedの中に、キー値と値のマップを入れている
         //roomId,roomName,roomDetail,roomAddmitNum,ownerUserID,住所全体,
-        let feed = ["roomID":self.roomID,"roomImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"memberNum":self.memberNum,"userImage":self.userImage,"userID":self.uid!,"userName":self.userName] as [String:Any]
+        let feed = ["roomID":self.roomID,"roomImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"memberNum":self.memberNum,"userImage":self.userImage,"userID":self.uid!,"userName":self.userName,"ownerUserID":self.ownerUserID] as [String:Any]
                     
         //feedにkey値を付ける
         let postFeed = ["\(key)":feed]

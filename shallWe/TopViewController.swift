@@ -191,7 +191,9 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                                 let roomName = memberaaPost["roomName"] as? String,
                                 let roomDetail = memberaaPost["roomDetail"] as? String,
                                 let memberNum = memberaaPost["memberNum"] as? String,
-                                let roomAddmitNum = memberaaPost["roomAddmitNum"] as? String {
+                                let roomAddmitNum = memberaaPost["roomAddmitNum"] as? String,
+                                let ownerUserID = memberaaPost["ownerUserID"] as? String
+                            {
                                 //owner_posstの中に入れていく
                                 self.member_posst.roomImage = roomImage
                                 self.member_posst.roomID = roomID
@@ -199,6 +201,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                                 self.member_posst.roomDetail = roomDetail
                                 self.member_posst.roomAddmitNum = roomAddmitNum
                                 self.member_posst.memberNum = memberNum
+                                self.member_posst.ownerUserID = ownerUserID
                                 
                                 self.member_posts.append(self.member_posst)
                                 self.memberRoomTableView.reloadData()
