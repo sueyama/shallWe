@@ -171,6 +171,10 @@ class PrivateChatViewController: JSQMessagesViewController {
     //メッセージをFirebaseに入れる
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
+        if(text == nil || text == ""){
+            return
+        }
+        
         let rootRef = Database.database().reference(fromURL: "https://shallwe-28db7.firebaseio.com/").child("message").child(self.roomID)
         let timestamp = Int(NSDate().timeIntervalSince1970)
         let post:Dictionary<String,Any>? = ["from":senderId,"name":senderDisplayName,"text":text,"timestamp":timestamp,"profileImage":self.pathToImage]
