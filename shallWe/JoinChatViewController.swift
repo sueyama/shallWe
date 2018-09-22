@@ -242,9 +242,9 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
         let feed2 = ["roomID":self.roomID,"pathToImage":self.pathToImage,"roomName":self.roomName,"roomDetail":self.roomDetail,"roomAddmitNum":self.roomAddmitNum,"memberNum":self.memberNum,"ownerUserID":self.ownerUserID] as [String:Any]
         
         //feedにkey値を付ける
-        let postFeed2 = [roomKey:feed2]
-        //DatabaseのMemberの下にすべて入れる
-        ref.child("Member").updateChildValues(postFeed2)
+        let postFeed2 = [self.roomID:feed2]
+        //Databaseのroomsの下に更新する
+        ref.child("Rooms").updateChildValues(postFeed2)
 
         //indicatorを止める
         AppDelegate.instance().dismissActivityIndicator()
