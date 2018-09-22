@@ -47,7 +47,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         
         //Indicatorを回す
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
-        SVProgressHUD.show(withStatus: "検索中...")
+        SVProgressHUD.show()
 
         self.prepareNabiBar()
         self.getLoginUserInfo()
