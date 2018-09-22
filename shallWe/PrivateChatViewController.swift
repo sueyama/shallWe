@@ -21,6 +21,7 @@ class PrivateChatViewController: JSQMessagesViewController {
     var roomDetail:String!
     var backGroundImage:UIImage = UIImage()
     var memberNum:String!
+    var ownerUserID:String!
     
     var iconPath: [String] = []
     
@@ -223,7 +224,7 @@ class PrivateChatViewController: JSQMessagesViewController {
         //roomDetailを渡したい ルーム詳細
         roomDetailVC.roomDetail = self.roomDetail
         //roomDetailを渡したい ルーム詳細
-        roomDetailVC.ownerUserID = self.uid!
+        roomDetailVC.ownerUserID = self.ownerUserID
         
     }
     //NabigationBatの設定

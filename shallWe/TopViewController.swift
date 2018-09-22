@@ -265,7 +265,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             //memberNumを渡したい
             privateChatVC.memberNum = self.seni_memberNum
             //ownerUserIDを渡したい
-            //privateChatVC.ownerUserID = self.seni_ownerUserID
+            privateChatVC.ownerUserID = self.seni_ownerUserID
             //keyを渡したい
             //privateChatVC.key = self.seni_roomKey
 

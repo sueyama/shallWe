@@ -276,6 +276,8 @@ class JoinChatViewController: UIViewController, UICollectionViewDelegate, UIColl
             privateChatVC.roomDetail = self.roomDetail
             //memberNumを渡したい
             privateChatVC.memberNum = self.memberNum
+            //を渡したい
+            privateChatVC.ownerUserID = self.ownerUserID
 
         }
     }
