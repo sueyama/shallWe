@@ -47,12 +47,15 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // ログインボタンを押下可能に
+        createButton.isEnabled = true
 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         editUI()
+
         //テキストビューの元のframeを取得する（テキストフィールド可変設定用）
         originalFrame = roomDetail.frame
 
@@ -174,6 +177,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
 
     func createRoom(){
+
         
         if(self.roomName.text == nil || self.roomName.text == ""){
             // UIAlertControllerを生成
@@ -212,6 +216,9 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
             return
         }
+        // ログインボタンを押下不可に
+        self.createButton.isEnabled = false
+
         //FireBaseのDatabaseを宣言
         let ref = Database.database().reference()
         //StorageのURLを取得
@@ -232,6 +239,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                 AppDelegate.instance().dismissActivityIndicator()
                 return
             }
+
             //URLはストレージのURL(Firebase上のURLのみを入れる)
             imageRef.downloadURL(completion: { (url, error) in
                 if url != nil {
@@ -253,6 +261,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
                     self.roomAddmitNum.text = nil
                     self.roomImage.image = nil
 
+
                     //TOPnのタブの
                     self.tabBarController?.selectedIndex = 0
                 }
@@ -260,7 +269,7 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
             })
             
         }
-        
+
         uploadTask.resume()
 
 

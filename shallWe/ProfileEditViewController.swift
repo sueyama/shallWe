@@ -46,13 +46,12 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     //テキストビューの表示領域
     var originalFrame:CGRect?
 
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        //ログインユーザのデータを引っ張ってくるメソッド呼び出し
-//        getLoginUserInfo()
-//
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // ログインボタンを押下可能に
+        saveButton.isEnabled = true
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -204,6 +203,9 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     func saveProfile(){
+        // ログインボタンを押下不可に
+        saveButton.isEnabled = false
+        
         //FireBaseのDatabaseを宣言
         let ref = Database.database().reference()
         //StorageのURLを取得
