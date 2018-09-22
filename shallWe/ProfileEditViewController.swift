@@ -202,37 +202,13 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     func saveProfile(){
-        // ログインボタンを押下不可に
-        saveButton.isEnabled = false
-
-        if(self.topLoginUserName.text == nil || self.topLoginUserName.text == ""){
-            // UIAlertControllerを生成
-            let alui = UIAlertController(title: "入力エラー", message: "名前を入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
-            // 選択肢としてContinueボタンを用意する
-            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alui.addAction(btn)
-            present(alui, animated: true, completion: nil)
-            
-            return
-        }else if(self.topLoginProfileDetail.text == nil || self.topLoginProfileDetail.text == ""){
-            // UIAlertControllerを生成
-            let alui = UIAlertController(title: "入力エラー", message: "プロフィール詳細を入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
-            // 選択肢としてContinueボタンを用意する
-            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alui.addAction(btn)
-            present(alui, animated: true, completion: nil)
-            
-            return
-        }else if(self.topLoginUserImage.image == nil){
-            // UIAlertControllerを生成
-            let alui = UIAlertController(title: "入力エラー", message: "プロフィールの画像を選択して下さい。", preferredStyle: UIAlertControllerStyle.alert)
-            // 選択肢としてContinueボタンを用意する
-            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alui.addAction(btn)
-            present(alui, animated: true, completion: nil)
-            
+        //必須チェック
+        if (requiredCheck() == false){
             return
         }
+        
+        // ログインボタンを押下不可に
+        self.saveButton.isEnabled = false
 
         //FireBaseのDatabaseを宣言
         let ref = Database.database().reference()
@@ -280,6 +256,31 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         uploadTask.resume()
         
         
+    }
+    func requiredCheck() -> Bool{
+        if(self.topLoginUserImage.image == nil){
+            let errorMassage = "プロフィール画像を選択してください"
+            showErrorMassage(massage : errorMassage)
+            return false;
+        }else if(self.topLoginUserName.text == nil || self.topLoginUserName.text == ""){
+            let errorMassage = "ユーザー名を入力して下さい"
+            showErrorMassage(massage : errorMassage)
+            return false;
+        }else if(self.topLoginProfileDetail.text == nil || self.topLoginProfileDetail.text == ""){
+            let errorMassage = "プロフィール詳細を入力して下さい"
+            showErrorMassage(massage : errorMassage)
+            return false;
+        }
+        return true
+    }
+    func showErrorMassage(massage:String){
+        // UIAlertControllerを生成
+        let alui = UIAlertController(title: "入力エラー", message: massage, preferredStyle: UIAlertControllerStyle.alert)
+        // 選択肢としてContinueボタンを用意する
+        let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        alui.addAction(btn)
+        present(alui, animated: true, completion: nil)
+
     }
     //見た目の設定
     func editUI(){

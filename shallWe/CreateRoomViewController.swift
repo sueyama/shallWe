@@ -177,43 +177,8 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
 
     func createRoom(){
-
-        
-        if(self.roomName.text == nil || self.roomName.text == ""){
-            // UIAlertControllerを生成
-            let alui = UIAlertController(title: "入力エラー", message: "ルーム名を入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
-            // 選択肢としてContinueボタンを用意する
-            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alui.addAction(btn)
-            present(alui, animated: true, completion: nil)
-            
-            return
-        }else if(self.roomDetail.text == nil || self.roomDetail.text == ""){
-            // UIAlertControllerを生成
-            let alui = UIAlertController(title: "入力エラー", message: "ルーム詳細を入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
-            // 選択肢としてContinueボタンを用意する
-            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alui.addAction(btn)
-            present(alui, animated: true, completion: nil)
-
-            return
-        }else if(self.roomAddmitNum.text == nil || self.roomAddmitNum.text == ""){
-            // UIAlertControllerを生成
-            let alui = UIAlertController(title: "入力エラー", message: "募集人数を入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
-            // 選択肢としてContinueボタンを用意する
-            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alui.addAction(btn)
-            present(alui, animated: true, completion: nil)
-
-            return
-        }else if(self.roomImage.image == nil){
-            // UIAlertControllerを生成
-            let alui = UIAlertController(title: "入力エラー", message: "ルームの画像を選択して下さい。", preferredStyle: UIAlertControllerStyle.alert)
-            // 選択肢としてContinueボタンを用意する
-            let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alui.addAction(btn)
-            present(alui, animated: true, completion: nil)
-
+        //必須チェック
+        if (requiredCheck() == false){
             return
         }
         // ログインボタンを押下不可に
@@ -272,6 +237,35 @@ class CreateRoomViewController: UIViewController, UIImagePickerControllerDelegat
 
         uploadTask.resume()
 
+
+    }
+    func requiredCheck() -> Bool{
+        if(self.roomImage.image == nil){
+            let errorMassage = "ルーム画像を選択して下さい"
+            showErrorMassage(massage : errorMassage)
+            return false
+        }else if(self.roomDetail.text == nil || self.roomDetail.text == ""){
+            let errorMassage = "ルーム詳細を入力して下さい"
+            showErrorMassage(massage : errorMassage)
+            return false
+        }else if(self.roomAddmitNum.text == nil || self.roomAddmitNum.text == ""){
+            let errorMassage = "募集人数を入力して下さい"
+            showErrorMassage(massage : errorMassage)
+            return false
+        }else if(self.roomName.text == nil || self.roomName.text == ""){
+            let errorMassage = "ルーム名を入力して下さい"
+            showErrorMassage(massage : errorMassage)
+            return false
+        }
+        return true;
+    }
+    func showErrorMassage(massage : String){
+        // UIAlertControllerを生成
+        let alui = UIAlertController(title: "入力エラー", message: massage, preferredStyle: UIAlertControllerStyle.alert)
+        // 選択肢としてContinueボタンを用意する
+        let btn = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        alui.addAction(btn)
+        present(alui, animated: true, completion: nil)
 
     }
     //見た目の設定
