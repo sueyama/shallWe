@@ -237,7 +237,7 @@ class TopViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             self.seni_roomDetail = self.member_posts[indexPath.row].roomDetail
             self.seni_ownerUserID = self.member_posts[indexPath.row].ownerUserID
             self.seni_memberNum = self.member_posts[indexPath.row].memberNum
-            self.seni_roomKey = self.member_posts[indexPath.row].key
+            //self.seni_roomKey = self.member_posts[indexPath.row].key
 
         }
         
