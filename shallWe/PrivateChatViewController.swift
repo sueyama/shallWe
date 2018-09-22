@@ -41,8 +41,8 @@ class PrivateChatViewController: JSQMessagesViewController {
 
     var userInfoMap = LoginUserPost()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
         self.prepareNabiBar()
         self.getLoginUserInfo()
